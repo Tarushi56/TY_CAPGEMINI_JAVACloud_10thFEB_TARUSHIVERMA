@@ -3,8 +3,9 @@ package com.tyss.capgemini.loanproject.servicesTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-import com.tyss.capgemini.loanproject.exception.DateFormatMismatchException;
-import com.tyss.capgemini.loanproject.exception.DateOutOfBoundException;
+//import com.tyss.capgemini.loanproject.exception.DateFormatMismatchException;
+import com.tyss.capgemini.loanproject.exception.*;
+
 import com.tyss.capgemini.loanproject.exception.PasswordFormatMismatchException;
 import static com.tyss.capgemini.loanproject.util.FactoryClass.*;
 import static com.tyss.capgemini.loanproject.repository.Repository.*;
@@ -52,5 +53,39 @@ class CustomerServiceTest {
 		}
 	}
 	
-
+	@Test
+	void payLoan1() {
+		String username = "poonam191";
+		double loanPay = 50000;
+		try {
+			isTrue = getCustomerDAO().payLoan(username, loanPay);
+			assertEquals(isTrue, true);
+		} catch (LoanExcessException e) {
+			assertThrows(LoanExcessException.class, () -> {
+				getCustomerDAO().payLoan(username, loanPay);
+			});
+		} catch (InsufficientBalanceException e) {
+			assertThrows(InsufficientBalanceException.class, () -> {
+				getCustomerDAO().payLoan(username, loanPay);
+			});
+		}
+	}
+	
+	@Test
+	void payLoan2() {
+		String username = "Mahim@123";
+		double loanPay = 500000;
+		try {
+			isTrue = getCustomerDAO().payLoan(username, loanPay);
+			assertEquals(isTrue, false);
+		} catch (LoanExcessException e) {
+			assertThrows(LoanExcessException.class, () -> {
+				getCustomerDAO().payLoan(username, loanPay);
+			});
+		} catch (InsufficientBalanceException e) {
+			assertThrows(InsufficientBalanceException.class, () -> {
+				getCustomerDAO().payLoan(username, loanPay);
+			});
+		}
+	}
 }

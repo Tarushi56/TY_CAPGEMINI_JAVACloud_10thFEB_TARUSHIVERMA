@@ -29,10 +29,4 @@ class LADDAOTest {
 		assertEquals(loanForms, FORMS);
 	}
 
-	@Test
-	void testRequestedForms() {
-		List<HashMap<String, Object>> isEquals = getLadDAO().requestedForms();
-		assertEquals(isEquals, REQUESTED_FORMS);
-	}
-
 }

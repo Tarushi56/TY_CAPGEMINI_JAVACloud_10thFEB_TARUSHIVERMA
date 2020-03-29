@@ -24,6 +24,7 @@ public class Repository {
 	public static final List<HashMap<String, Object>> APPROVEDFORM_LIST = new LinkedList<HashMap<String, Object>>();
 	public static final List<HashMap<String, Object>> REJECTEDFORM_LIST = new LinkedList<HashMap<String, Object>>();
 	public static final List<HashMap<String, Object>> REQUESTEDFORM_LIST = new LinkedList<HashMap<String, Object>>();
+	public static final List<HashMap<String, Object>> FORMS = new LinkedList<HashMap<String, Object>>();
 
 	public static void userTable() {
 

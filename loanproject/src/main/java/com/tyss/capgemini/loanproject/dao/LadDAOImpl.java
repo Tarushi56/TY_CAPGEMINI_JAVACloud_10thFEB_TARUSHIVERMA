@@ -24,7 +24,7 @@ public class LadDAOImpl implements LadDAO {
 				if (status.equalsIgnoreCase("requested")) {
 					LOANFORM_LIST.get(j).put("Type", "approved");
 				} else {
-
+					LOANFORM_LIST.get(j).put("Type", "rejected");
 				}
 			}
 		}

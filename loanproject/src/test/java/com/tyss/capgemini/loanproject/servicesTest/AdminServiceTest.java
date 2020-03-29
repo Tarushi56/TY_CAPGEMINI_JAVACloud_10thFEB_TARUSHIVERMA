@@ -12,7 +12,11 @@ import com.tyss.capgemini.loanproject.exception.*;
 
 class AdminServiceTest {
 
-	boolean isTrue;
+boolean isTrue;
+	
+	static {
+		userTable();
+	}
 
 	@Test
 	void test() {
@@ -25,8 +29,8 @@ class AdminServiceTest {
 		try {
 			isTrue = getAdminServices().addClients("AP01");
 			assertEquals(isTrue, true);
-		} catch (InvalidApplicationIdException e) {
-			assertThrows(InvalidApplicationIdException.class, () ->{
+		} catch (InvalidAppliactionIdException  e) {
+			assertThrows(InvalidAppliactionIdException .class, () ->{
 				getAdminServices().addClients("AP01");
 			});
 		}
@@ -37,8 +41,8 @@ class AdminServiceTest {
 		try {
 			isTrue = getAdminServices().addClients("AP90");
 			assertEquals(isTrue, false);
-		} catch (InvalidApplicationIdException e) {
-			assertThrows(InvalidApplicationIdException.class, () ->{
+		} catch (InvalidAppliactionIdException  e) {
+			assertThrows(InvalidAppliactionIdException .class, () ->{
 				getAdminServices().addClients("AP90");
 			});
 		}

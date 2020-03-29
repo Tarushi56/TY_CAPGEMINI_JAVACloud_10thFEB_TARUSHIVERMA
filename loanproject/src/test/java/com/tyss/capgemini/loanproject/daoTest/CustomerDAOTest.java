@@ -19,17 +19,34 @@ class CustomerDAOTest {
 	}
 
 	@Test
+	void payLoan1() {
+		isTrue=getCustomerDAO().payLoan("poonam191", 12000.0);
+		assertEquals(isTrue, true);
+	}
+	
+	
+	
+	@Test
 	void testChangePassword1() {
 
-		String username = "praveen191";
-		String newPass = "Pass@2";
+		String username = "poonam191";
+		String newPass = "Pass@6343";
 		
 		isTrue = getCustomerDAO().changePassword(username, newPass);
 		assertEquals(isTrue, true);
 		
 	}
 	
-	
+	void testChangePassword2() {
+
+		String username = "Aldred";
+		String newPass = "pass";
+		
+		isTrue = getCustomerDAO().changePassword(username, newPass);
+		assertEquals(isTrue, false);
+		
+	}
+
 
 	@Test
 	void TestViewLoanPrograms() {
@@ -37,36 +54,35 @@ class CustomerDAOTest {
 		assertEquals(loanPrograms, LOANTYPE_LIST);
 	}
 
-	@Test
-	void payLoan() {
-		String username = "praveen191";
-		double loanPay = 50000;
-		try {
-			isTrue = getCustomerDAO().payLoan(username, loanPay);
-			assertEquals(isTrue, true);
-		} catch (LoanExcessException e) {
-			assertThrows(LoanExcessException.class, () -> {
-				getCustomerDAO().payLoan(username, loanPay);
-			});
-		} catch (InsufficientBalanceException e) {
-			assertThrows(InsufficientBalanceException.class, () -> {
-				getCustomerDAO().payLoan(username, loanPay);
-			});
-		}
-	}
+	
 
 	@Test
-	void checkBalance() {
+	void checkBalance1() {
 		String username = "shreya191";
 		double balance = getCustomerDAO().checkBalance(username);
 		assertEquals(balance, 60987.2);
 	}
-
+	
 	@Test
-	void checkLoan() {
+	void checkBalance2() {
+		String username = "ranjan@123";
+		double balance = getCustomerDAO().checkBalance(username);
+		assertEquals(balance, 0.0);
+	}
+	
+	
+	@Test
+	void checkLoan1() {
 		String username = "shreya191";
 		double loanAmount = getCustomerDAO().checkLoan(username);
 		assertEquals(loanAmount, 90700);
+	}
+	
+	@Test
+	void checkLoan2() {
+		String username = "shresh30";
+		double loanAmount = getCustomerDAO().checkLoan(username);
+		assertEquals(loanAmount, 0.0);
 	}
 
 }

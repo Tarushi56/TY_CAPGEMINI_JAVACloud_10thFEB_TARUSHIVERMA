@@ -46,3 +46,29 @@
 [2020-03-29 17:14:50,046][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 5> Check Balance: 
 [2020-03-29 17:14:50,046][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 6> Logout
 [2020-03-29 17:14:50,046][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - Enter your choice: 
+[2020-03-29 21:25:16,463][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  -  WELCOME 
+[2020-03-29 21:25:16,469][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 1> Login as Customer?
+[2020-03-29 21:25:16,469][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 2> Login as Employee?
+[2020-03-29 21:25:16,470][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 3> New user? Register
+[2020-03-29 21:25:16,470][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 4> Exit
+[2020-03-29 21:25:16,470][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  -  
+[2020-03-29 21:26:12,067][main] INFO  com.tyss.capgemini.loanproject.dao.LoginDAOImpl  - --------WELCOME mayank191--------
+[2020-03-29 21:26:12,070][main] INFO  com.tyss.capgemini.loanproject.controller.AdminController  - Admin Operations
+[2020-03-29 21:26:12,070][main] INFO  com.tyss.capgemini.loanproject.controller.AdminController  - 1> Loan Programs: 
+[2020-03-29 21:26:12,070][main] INFO  com.tyss.capgemini.loanproject.controller.AdminController  - 2> Client Manager 
+[2020-03-29 21:26:12,070][main] INFO  com.tyss.capgemini.loanproject.controller.AdminController  - 3> Loan Reports: 
+[2020-03-29 21:26:12,070][main] INFO  com.tyss.capgemini.loanproject.controller.AdminController  - 4> Logout
+[2020-03-29 21:26:12,070][main] INFO  com.tyss.capgemini.loanproject.controller.AdminController  - Enter the choice: 
+[2020-03-29 21:29:43,450][main] INFO  com.tyss.capgemini.loanproject.dao.AdminDAOImpl  - found
+[2020-03-29 21:34:12,036][main] INFO  com.tyss.capgemini.loanproject.dao.CustomerDAOImpl  - Password has been changed successfully.
+[2020-03-29 21:34:48,871][main] INFO  com.tyss.capgemini.loanproject.dao.CustomerDAOImpl  - Password has been changed successfully.
+[2020-03-29 21:34:48,886][main] INFO  com.tyss.capgemini.loanproject.dao.CustomerDAOImpl  - Amount paid successfully
+[2020-03-29 21:36:00,505][main] INFO  com.tyss.capgemini.loanproject.dao.AdminDAOImpl  - found
+[2020-03-29 21:36:40,325][main] INFO  com.tyss.capgemini.loanproject.dao.CustomerDAOImpl  - Your loan application form has been submitted successfully.
+[2020-03-29 21:36:40,368][main] INFO  com.tyss.capgemini.loanproject.dao.CustomerDAOImpl  - Password has been changed successfully.
+[2020-03-29 21:37:16,396][main] INFO  com.tyss.capgemini.loanproject.dao.CustomerDAOImpl  - Your loan application form has been submitted successfully.
+[2020-03-29 21:37:16,446][main] INFO  com.tyss.capgemini.loanproject.dao.CustomerDAOImpl  - Password has been changed successfully.
+[2020-03-29 21:37:16,472][main] INFO  com.tyss.capgemini.loanproject.dao.CustomerDAOImpl  - Amount paid successfully
+[2020-03-29 21:43:22,261][main] INFO  com.tyss.capgemini.loanproject.dao.CustomerDAOImpl  - Your loan application form has been submitted successfully.
+[2020-03-29 21:43:22,311][main] INFO  com.tyss.capgemini.loanproject.dao.CustomerDAOImpl  - Password has been changed successfully.
+[2020-03-29 21:43:22,340][main] INFO  com.tyss.capgemini.loanproject.dao.CustomerDAOImpl  - Amount paid successfully
