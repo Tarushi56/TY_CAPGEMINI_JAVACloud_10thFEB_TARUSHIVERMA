@@ -1,0 +1,1 @@
+This is the FileWriter example of writing data..!!

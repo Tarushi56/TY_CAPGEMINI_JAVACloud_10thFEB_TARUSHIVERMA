@@ -1,0 +1,48 @@
+[2020-03-28 10:54:44,207][main] INFO  com.tyss.capgemini.loanproject.controller.Login  - Welcome..!!
+[2020-03-28 10:54:44,209][main] INFO  com.tyss.capgemini.loanproject.controller.Login  - 1> Login as Customer
+[2020-03-28 10:54:44,209][main] INFO  com.tyss.capgemini.loanproject.controller.Login  - 2> Login as Employee
+[2020-03-28 10:54:44,209][main] INFO  com.tyss.capgemini.loanproject.controller.Login  - 3> New user... Register
+[2020-03-28 10:54:44,209][main] INFO  com.tyss.capgemini.loanproject.controller.Login  - 4> Exit
+[2020-03-29 17:12:53,160][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  -  WELCOME 
+[2020-03-29 17:12:53,176][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 1> Login as Customer?
+[2020-03-29 17:12:53,177][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 2> Login as Employee?
+[2020-03-29 17:12:53,177][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 3> New user? Register
+[2020-03-29 17:12:53,178][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 4> Exit
+[2020-03-29 17:12:53,178][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  -  
+[2020-03-29 17:12:53,224][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  -  WELCOME 
+[2020-03-29 17:12:53,230][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 1> Login as Customer?
+[2020-03-29 17:12:53,230][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 2> Login as Employee?
+[2020-03-29 17:12:53,230][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 3> New user? Register
+[2020-03-29 17:12:53,231][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 4> Exit
+[2020-03-29 17:12:53,231][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  -  
+[2020-03-29 17:13:30,141][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  -  WELCOME 
+[2020-03-29 17:13:30,144][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 1> Login as Customer?
+[2020-03-29 17:13:30,144][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 2> Login as Employee?
+[2020-03-29 17:13:30,146][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 3> New user? Register
+[2020-03-29 17:13:30,147][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - 4> Exit
+[2020-03-29 17:13:30,148][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  -  
+[2020-03-29 17:13:40,633][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - ---------CUSTOMER LOGIN---------
+[2020-03-29 17:13:40,634][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - Enter the Username:-
+[2020-03-29 17:14:32,049][main] INFO  com.tyss.capgemini.loanproject.controller.LoginController  - Enter the Password:-
+[2020-03-29 17:14:41,955][main] INFO  com.tyss.capgemini.loanproject.dao.LoginDAOImpl  - --------WELCOME praveen191---------
+[2020-03-29 17:14:41,964][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - Customer Operations:-
+[2020-03-29 17:14:41,964][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 1> Loan Programs:
+[2020-03-29 17:14:41,964][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 2> Apply for loan: 
+[2020-03-29 17:14:41,965][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 3> Pay Loan: 
+[2020-03-29 17:14:41,966][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 4> change password: 
+[2020-03-29 17:14:41,966][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 5> Check Balance: 
+[2020-03-29 17:14:41,966][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 6> Logout
+[2020-03-29 17:14:41,966][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - Enter your choice: 
+[2020-03-29 17:14:49,980][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - [{Type=House Loan, Time-Period=20 years(Max), Interest-Rates=9.75-10.25%}, {Type=Vehicle Loan, Time-Period=36 months - 60 months(Max), Interest-Rates=11.0-14.75%}, {Type=Educational Loan, Time-Period=5 years(Max), Interest-Rates=11.5-12.50%}, {Type=Payday Loan, Time-Period=1 month(Max), Interest-Rates=20.75-23.0%}, {Type=Personal Loan, Time-Period=5 years(Max), Interest-Rates=12.0-12.50%}]
+[2020-03-29 17:14:50,041][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - [{Type=House Loan, Time-Period=20 years(Max), Interest-Rates=9.75-10.25%}, {Type=Vehicle Loan, Time-Period=36 months - 60 months(Max), Interest-Rates=11.0-14.75%}, {Type=Educational Loan, Time-Period=5 years(Max), Interest-Rates=11.5-12.50%}, {Type=Payday Loan, Time-Period=1 month(Max), Interest-Rates=20.75-23.0%}, {Type=Personal Loan, Time-Period=5 years(Max), Interest-Rates=12.0-12.50%}]
+[2020-03-29 17:14:50,043][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - [{Type=House Loan, Time-Period=20 years(Max), Interest-Rates=9.75-10.25%}, {Type=Vehicle Loan, Time-Period=36 months - 60 months(Max), Interest-Rates=11.0-14.75%}, {Type=Educational Loan, Time-Period=5 years(Max), Interest-Rates=11.5-12.50%}, {Type=Payday Loan, Time-Period=1 month(Max), Interest-Rates=20.75-23.0%}, {Type=Personal Loan, Time-Period=5 years(Max), Interest-Rates=12.0-12.50%}]
+[2020-03-29 17:14:50,043][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - [{Type=House Loan, Time-Period=20 years(Max), Interest-Rates=9.75-10.25%}, {Type=Vehicle Loan, Time-Period=36 months - 60 months(Max), Interest-Rates=11.0-14.75%}, {Type=Educational Loan, Time-Period=5 years(Max), Interest-Rates=11.5-12.50%}, {Type=Payday Loan, Time-Period=1 month(Max), Interest-Rates=20.75-23.0%}, {Type=Personal Loan, Time-Period=5 years(Max), Interest-Rates=12.0-12.50%}]
+[2020-03-29 17:14:50,043][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - [{Type=House Loan, Time-Period=20 years(Max), Interest-Rates=9.75-10.25%}, {Type=Vehicle Loan, Time-Period=36 months - 60 months(Max), Interest-Rates=11.0-14.75%}, {Type=Educational Loan, Time-Period=5 years(Max), Interest-Rates=11.5-12.50%}, {Type=Payday Loan, Time-Period=1 month(Max), Interest-Rates=20.75-23.0%}, {Type=Personal Loan, Time-Period=5 years(Max), Interest-Rates=12.0-12.50%}]
+[2020-03-29 17:14:50,045][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - Customer Operations:-
+[2020-03-29 17:14:50,045][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 1> Loan Programs:
+[2020-03-29 17:14:50,045][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 2> Apply for loan: 
+[2020-03-29 17:14:50,046][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 3> Pay Loan: 
+[2020-03-29 17:14:50,046][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 4> change password: 
+[2020-03-29 17:14:50,046][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 5> Check Balance: 
+[2020-03-29 17:14:50,046][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - 6> Logout
+[2020-03-29 17:14:50,046][main] INFO  com.tyss.capgemini.loanproject.controller.CustomerController  - Enter your choice: 
