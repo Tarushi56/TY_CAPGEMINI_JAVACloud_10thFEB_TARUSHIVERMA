@@ -18,17 +18,4 @@ public class LoanTypeBean implements Serializable {
 		this.timePeriod = timePeriod;
 		this.interestRates = interestRates;
 	}
-
-	public String getLoanType() {
-		return loanType;
-	}
-
-	public String getTimePeriod() {
-		return timePeriod;
-	}
-
-	public String getInterestRates() {
-		return interestRates;
-	}
-
 }

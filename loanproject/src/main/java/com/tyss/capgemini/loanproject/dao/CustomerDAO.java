@@ -4,18 +4,38 @@ import java.util.HashMap;
 import java.util.List;
 
 public interface CustomerDAO {
-	public List<HashMap<String, Object>> viewLoanPrograms();
+	public boolean viewLoanPrograms();
 
 	public boolean changePassword(String custUsername, String newPass);
 
-	public double checkBalance(String custUsername);
+	public boolean checkBalance(String custUsername);
 
-	public boolean loanApplicationForm(String applicationId, String accountNo, String applicantFirstName,
+	public boolean loanApplicationForm(String applicationId, String accountNo, String email, String applicantFirstName,
 			String applicantMiddleName, String applicantLastName, String dateOfBirth, String coapplicantFirstName,
 			String coapplicantMiddleName, String coapplicantLastName, String loanChoice, String branchCode,
-			String branchName, String openDate, String requestDate, String sub);
+			String branchName, String openDate, String requestDate, String loanAmount);
 
-	boolean payLoan(String custUsername, Double loanPay);
+	public boolean payLoan(String custUsername, Double loanPay);
 
-	double checkLoan(String custUsername);
+	public boolean checkLoan(String custUsername);
+
+	public boolean loanTypes();
+
+	public String loanTypes(int k);
+
+	public boolean viewApplications(String custUsername);
+
+	public boolean emailExists(String email);
+
+	public boolean usernameExists(String username);
+
+	public boolean applicationExist(String id);
+
+	public String fetchMail(String username);
+
+	public String fetchFirstName(String username);
+
+	public String fetchLastName(String username);
+
+	public Double returnBal(String username);
 }

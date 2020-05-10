@@ -4,11 +4,17 @@ import java.util.HashMap;
 import java.util.List;
 
 public interface LadDAO {
-	public List<HashMap<String, Object>> viewLoanPrograms();
+	public boolean viewLoanPrograms();
 
 	public boolean ladReviewForms(String apid, String status);
 
-	public List<HashMap<String, Object>> ladViewForms(String planString);
+	public boolean ladViewForms(String planString);
 
-	public List<HashMap<String, Object>> requestedForms();
+	public boolean requestedForms();
+
+	public boolean loanTypes();
+
+	public String loanTypes(String k);
+
+	public boolean applicationExist(String id);
 }

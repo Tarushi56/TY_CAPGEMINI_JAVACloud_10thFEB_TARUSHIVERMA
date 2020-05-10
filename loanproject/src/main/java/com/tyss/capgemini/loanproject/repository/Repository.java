@@ -13,22 +13,18 @@ import com.tyss.capgemini.loanproject.beans.LoanTypeBean;
 
 public class Repository {
 	static Scanner scanner = new Scanner(System.in);
-	public static final List<HashMap<String, Object>> CLIENT_LIST = new LinkedList<HashMap<String, Object>>();
-	public static final List<HashMap<String, Object>> ADMIN_LIST = new LinkedList<HashMap<String, Object>>();
-	public static final List<HashMap<String, Object>> CUSTOMER_LIST = new LinkedList<HashMap<String, Object>>();
-	public static final List<HashMap<String, Object>> APPROVALDEPT_LIST = new LinkedList<HashMap<String, Object>>();
-	public static final List<HashMap<String, Object>> MAIN_LIST = new LinkedList<HashMap<String, Object>>();
-	public static final List<HashMap<String, Object>> LOANTYPE_LIST = new LinkedList<HashMap<String, Object>>();
-	public static final List<HashMap<String, Object>> LOANFORM_LIST = new LinkedList<HashMap<String, Object>>();
-	public static final List<HashMap<String, Object>> EMPLOYEE_LIST = new LinkedList<HashMap<String, Object>>();
-	public static final List<HashMap<String, Object>> APPROVEDFORM_LIST = new LinkedList<HashMap<String, Object>>();
-	public static final List<HashMap<String, Object>> REJECTEDFORM_LIST = new LinkedList<HashMap<String, Object>>();
-	public static final List<HashMap<String, Object>> REQUESTEDFORM_LIST = new LinkedList<HashMap<String, Object>>();
-	public static final List<HashMap<String, Object>> FORMS = new LinkedList<HashMap<String, Object>>();
+	public static final List<HashMap<String, Object>> clientList = new LinkedList<HashMap<String,Object>>();
+	public static final List<HashMap<String, Object>> adminList = new LinkedList<HashMap<String, Object>>();
+	public static final List<HashMap<String, Object>> customerList = new LinkedList<HashMap<String, Object>>();
+	public static final List<HashMap<String, Object>> approvalDeptList = new LinkedList<HashMap<String, Object>>();
+	public static final List<HashMap<String, Object>> mainList = new LinkedList<HashMap<String, Object>>();
+	public static final List<HashMap<String, Object>> loanTypeList = new LinkedList<HashMap<String, Object>>();
+	public static final List<HashMap<String, Object>> loanFormList = new LinkedList<HashMap<String, Object>>();
+	public static final List<HashMap<String, Object>> employeeList = new LinkedList<HashMap<String,Object>>();
+	public static void UserTable() {
 
-	public static void userTable() {
-
-		EmployeeBean bean1 = new EmployeeBean("mayank191", "ad01", "mayank.p@gmail.com", "pass1", "Mayank", "Singh",
+		// Admins
+		EmployeeBean bean1 = new EmployeeBean("mayank191", "ad01", "mayank.p@gmail.com", "Qwerty@123", "Mayank", "Singh",
 				7618723945L, "admin");
 
 		HashMap<String, Object> user1 = new LinkedHashMap<String, Object>();
@@ -40,12 +36,12 @@ public class Repository {
 		user1.put("lastname", bean1.getLastname());
 		user1.put("phone", bean1.getPhone());
 		user1.put("role", bean1.getRole());
-		ADMIN_LIST.add(user1);
-		MAIN_LIST.add(user1);
-		EMPLOYEE_LIST.add(user1);
+		adminList.add(user1);
+		mainList.add(user1);
+		employeeList.add(user1);
 
-		EmployeeBean bean2 = new EmployeeBean("ritam191", "ad02", "ritam.p@gmail.com", "pass2", "Ritam", "Roy",
-				7618721134L, "admin");
+		EmployeeBean bean2 = new EmployeeBean("ritam191", "ad02", "ritam.p@gmail.com", "Qwerty@123", "Ritam", "Roy", 7618721134L,
+				"admin");
 		HashMap<String, Object> user2 = new LinkedHashMap<String, Object>();
 		user2.put("userid", bean2.getUserid());
 		user2.put("password", bean2.getPassword());
@@ -55,12 +51,12 @@ public class Repository {
 		user2.put("lastname", bean2.getLastname());
 		user2.put("phone", bean2.getPhone());
 		user2.put("role", bean2.getRole());
-		ADMIN_LIST.add(user2);
-		MAIN_LIST.add(user2);
-		EMPLOYEE_LIST.add(user2);
+		adminList.add(user2);
+		mainList.add(user2);
+		employeeList.add(user2);
 
-		EmployeeBean bean3 = new EmployeeBean("amlan191", "ad03", "amlan.p@gmail.com", "pass3", "Amlan", "Dutta",
-				7612321135L, "admin");
+		EmployeeBean bean3 = new EmployeeBean("amlan191", "ad03", "amlan.p@gmail.com", "Qwerty@123", "Amlan", "Dutta", 7612321135L,
+				"admin");
 		HashMap<String, Object> user3 = new LinkedHashMap<String, Object>();
 		user3.put("userid", bean3.getUserid());
 		user3.put("password", bean3.getPassword());
@@ -70,12 +66,12 @@ public class Repository {
 		user3.put("lastname", bean3.getLastname());
 		user3.put("phone", bean3.getPhone());
 		user3.put("role", bean3.getRole());
-		ADMIN_LIST.add(user3);
-		MAIN_LIST.add(user3);
-		EMPLOYEE_LIST.add(user3);
+		adminList.add(user3);
+		mainList.add(user3);
+		employeeList.add(user3);
 
-		EmployeeBean bean4 = new EmployeeBean("rahul191", "ad04", "rahul.p@gmail.com", "pass4", "Rahul", "Yadav",
-				7618711678L, "admin");
+		EmployeeBean bean4 = new EmployeeBean("rahul191", "ad04", "rahul.p@gmail.com", "Qwerty@123", "Rahul", "Yadav", 7618711678L,
+				"admin");
 		HashMap<String, Object> user4 = new LinkedHashMap<String, Object>();
 		user4.put("userid", bean4.getUserid());
 		user4.put("password", bean4.getPassword());
@@ -85,12 +81,12 @@ public class Repository {
 		user4.put("lastname", bean4.getLastname());
 		user4.put("phone", bean4.getPhone());
 		user4.put("role", bean4.getRole());
-		ADMIN_LIST.add(user4);
-		MAIN_LIST.add(user4);
-		EMPLOYEE_LIST.add(user4);
+		adminList.add(user4);
+		mainList.add(user4);
+		employeeList.add(user4);
 
-		EmployeeBean bean5 = new EmployeeBean("anand191", "ad05", "anand.p@gmail.com", "pass5", "Anand", "Sharma",
-				7618312345L, "admin");
+		EmployeeBean bean5 = new EmployeeBean("anand191", "ad05", "anand.p@gmail.com", "Qwerty@123", "Anand", "Sharma", 7618312345L,
+				"admin");
 		HashMap<String, Object> user5 = new LinkedHashMap<String, Object>();
 		user5.put("userid", bean5.getUserid());
 		user5.put("password", bean5.getPassword());
@@ -100,13 +96,13 @@ public class Repository {
 		user5.put("lastname", bean5.getLastname());
 		user5.put("phone", bean5.getPhone());
 		user5.put("role", bean5.getRole());
-		ADMIN_LIST.add(user5);
-		MAIN_LIST.add(user5);
-		EMPLOYEE_LIST.add(user5);
+		adminList.add(user5);
+		mainList.add(user5);
+		employeeList.add(user5);
 
 		// Customer.
-		CustomerBean bean6 = new CustomerBean("praveen191", "cus01", "praveen.p@gmail.com", "pass6", "Praveen",
-				"Sharma", 7613412385L, "customer", 90987.12, 60890);
+		CustomerBean bean6 = new CustomerBean("manoj191", "cus01", "manoj.p@gmail.com", "Qwerty@123", "Manoj", "Sharma",
+				7613412385L, "customer", 90987.12, 60890);
 		HashMap<String, Object> user6 = new LinkedHashMap<String, Object>();
 		user6.put("userid", bean6.getUserid());
 		user6.put("password", bean6.getPassword());
@@ -118,10 +114,10 @@ public class Repository {
 		user6.put("AccountBal", bean6.getAccountBal());
 		user6.put("role", bean6.getRole());
 		user6.put("loanAmount", bean6.getLoanAmount());
-		CUSTOMER_LIST.add(user6);
-		MAIN_LIST.add(user6);
+		customerList.add(user6);
+		mainList.add(user6);
 
-		CustomerBean bean7 = new CustomerBean("shreya191", "cus02", "shreya.p@gmail.com", "pass7", "Shreya", "Singh",
+		CustomerBean bean7 = new CustomerBean("shreya191", "cus02", "shreya.p@gmail.com", "Qwerty@123", "Shreya", "Singh",
 				7613423385L, "customer", 60987.2, 90700);
 		HashMap<String, Object> user7 = new LinkedHashMap<String, Object>();
 		user7.put("userid", bean7.getUserid());
@@ -134,10 +130,10 @@ public class Repository {
 		user7.put("AccountBal", bean7.getAccountBal());
 		user7.put("role", bean7.getRole());
 		user7.put("loanAmount", bean7.getLoanAmount());
-		CUSTOMER_LIST.add(user7);
-		MAIN_LIST.add(user7);
+		customerList.add(user7);
+		mainList.add(user7);
 
-		CustomerBean bean8 = new CustomerBean("senku191", "cus03", "senku.p@gmail.com", "pass8", "Senku", "Manohar",
+		CustomerBean bean8 = new CustomerBean("senku191", "cus03", "senku.p@gmail.com", "Qwerty@123", "Senku", "Manohar",
 				7613412345L, "customer", 103567.2, 60000);
 		HashMap<String, Object> user8 = new LinkedHashMap<String, Object>();
 		user8.put("userid", bean8.getUserid());
@@ -150,10 +146,10 @@ public class Repository {
 		user8.put("AccountBal", bean8.getAccountBal());
 		user8.put("role", bean8.getRole());
 		user8.put("loanAmount", bean8.getLoanAmount());
-		CUSTOMER_LIST.add(user8);
-		MAIN_LIST.add(user8);
+		customerList.add(user8);
+		mainList.add(user8);
 
-		CustomerBean bean9 = new CustomerBean("tarushi191", "cus04", "tarushi.p@gmail.com", "pass9", "Tarushi", "Verma",
+		CustomerBean bean9 = new CustomerBean("tarushi191", "cus04", "tarushi.p@gmail.com", "Qwerty@123", "Tarushi", "Verma",
 				7613423445L, "customer", 37657.0, 30000);
 		HashMap<String, Object> user9 = new LinkedHashMap<String, Object>();
 		user9.put("userid", bean9.getUserid());
@@ -166,11 +162,11 @@ public class Repository {
 		user9.put("AccountBal", bean9.getAccountBal());
 		user9.put("role", bean9.getRole());
 		user9.put("loanAmount", bean9.getLoanAmount());
-		CUSTOMER_LIST.add(user9);
-		MAIN_LIST.add(user9);
+		customerList.add(user9);
+		mainList.add(user9);
 
-		CustomerBean bean10 = new CustomerBean("poonam191", "cus05", "poonam.p@gmail.com", "pass10", "Poonam",
-				"Raghuwanshi", 7613423490L, "customer", 78985.8, 78000);
+		CustomerBean bean10 = new CustomerBean("poonam191", "cus05", "poonam.p@gmail.com", "Qwerty@123", "Poonam", "Raghuwanshi",
+				7613423490L, "customer", 78985.8, 78000);
 		HashMap<String, Object> user10 = new LinkedHashMap<String, Object>();
 		user10.put("userid", bean10.getUserid());
 		user10.put("password", bean10.getPassword());
@@ -182,12 +178,12 @@ public class Repository {
 		user10.put("AccountBal", bean10.getAccountBal());
 		user10.put("role", bean10.getRole());
 		user10.put("loanAmount", bean10.getLoanAmount());
-		CUSTOMER_LIST.add(user10);
-		MAIN_LIST.add(user10);
+		customerList.add(user10);
+		mainList.add(user10);
 
 		// LoanApprovalDepartment
-		EmployeeBean bean11 = new EmployeeBean("saswata191", "lad01", "Saswat.p@gmail.com", "pass11", "Saswat",
-				"Biswas", 7613424567L, "L.A.D");
+		EmployeeBean bean11 = new EmployeeBean("saswat191", "lad01", "Saswat.p@gmail.com", "Qwerty@123", "Saswat", "Biswas",
+				7613424567L, "L.A.D");
 		HashMap<String, Object> user11 = new LinkedHashMap<String, Object>();
 		user11.put("userid", bean11.getUserid());
 		user11.put("password", bean11.getPassword());
@@ -197,12 +193,13 @@ public class Repository {
 		user11.put("lastname", bean11.getLastname());
 		user11.put("phone", bean11.getPhone());
 		user11.put("role", bean11.getRole());
-		APPROVALDEPT_LIST.add(user11);
-		MAIN_LIST.add(user11);
-		EMPLOYEE_LIST.add(user11);
+		approvalDeptList.add(user11);
+		mainList.add(user11);
+		clientList.add(user11);
+		employeeList.add(user11);
 
-		EmployeeBean bean12 = new EmployeeBean("shrawni191", "lad02", "shrawni.p@gmail.com", "pass12", "Shrawni",
-				"Rowdy", 7613423445L, "L.A.D");
+		EmployeeBean bean12 = new EmployeeBean("shrawani191", "lad02", "shrawani.p@gmail.com", "Qwerty@123", "Shrawani", "Rowdy",
+				7613423445L, "L.A.D");
 		HashMap<String, Object> user12 = new LinkedHashMap<String, Object>();
 		user12.put("userid", bean12.getUserid());
 		user12.put("password", bean12.getPassword());
@@ -212,11 +209,12 @@ public class Repository {
 		user12.put("lastname", bean12.getLastname());
 		user12.put("phone", bean12.getPhone());
 		user12.put("role", bean12.getRole());
-		APPROVALDEPT_LIST.add(user12);
-		MAIN_LIST.add(user12);
-		EMPLOYEE_LIST.add(user12);
+		approvalDeptList.add(user12);
+		mainList.add(user12);
+		clientList.add(user12);
+		employeeList.add(user12);
 
-		EmployeeBean bean13 = new EmployeeBean("divya191", "lad03", "divya.p@gmail.com", "pass13", "Divya", "Somaraju",
+		EmployeeBean bean13 = new EmployeeBean("divya191", "lad03", "divya.p@gmail.com", "Qwerty@123", "Divya", "Somaraju",
 				7613423490L, "L.A.D");
 		HashMap<String, Object> user13 = new LinkedHashMap<String, Object>();
 		user13.put("userid", bean13.getUserid());
@@ -227,111 +225,131 @@ public class Repository {
 		user13.put("lastname", bean13.getLastname());
 		user13.put("phone", bean13.getPhone());
 		user13.put("role", bean13.getRole());
-		APPROVALDEPT_LIST.add(user13);
-		MAIN_LIST.add(user13);
-		EMPLOYEE_LIST.add(user3);
+		approvalDeptList.add(user13);
+		mainList.add(user13);
+		clientList.add(user13);
+		employeeList.add(user3);
 
 		// LoanTable
-		LoanTypeBean loanBean1 = new LoanTypeBean("House Loan", "20 years(Max)", "9.75-10.25%");
+		LoanTypeBean loanBean1 = new LoanTypeBean("House Loan", "20 years(Max)", "9.75 %");
 		HashMap<String, Object> loan1 = new LinkedHashMap<String, Object>();
 		loan1.put("Type", loanBean1.getLoanType());
 		loan1.put("Time-Period", loanBean1.getTimePeriod());
 		loan1.put("Interest-Rates", loanBean1.getInterestRates());
-		LOANTYPE_LIST.add(loan1);
+		loanTypeList.add(loan1);
 
-		LoanTypeBean loanBean2 = new LoanTypeBean("Vehicle Loan", "36 months - 60 months(Max)", "11.0-14.75%");
+		LoanTypeBean loanBean2 = new LoanTypeBean("House Construction Loan", "40 years(Max)", "11.0 %");
 		HashMap<String, Object> loan2 = new LinkedHashMap<String, Object>();
 		loan2.put("Type", loanBean2.getLoanType());
 		loan2.put("Time-Period", loanBean2.getTimePeriod());
 		loan2.put("Interest-Rates", loanBean2.getInterestRates());
-		LOANTYPE_LIST.add(loan2);
+		loanTypeList.add(loan2);
 
-		LoanTypeBean loanBean3 = new LoanTypeBean("Educational Loan", "5 years(Max)", "11.5-12.50%");
+		LoanTypeBean loanBean3 = new LoanTypeBean("Educational Loan", "5 years(Max)", "11.5 %");
 		HashMap<String, Object> loan3 = new LinkedHashMap<String, Object>();
 		loan3.put("Type", loanBean3.getLoanType());
 		loan3.put("Time-Period", loanBean3.getTimePeriod());
 		loan3.put("Interest-Rates", loanBean3.getInterestRates());
-		LOANTYPE_LIST.add(loan3);
+		loanTypeList.add(loan3);
 
-		LoanTypeBean loanBean5 = new LoanTypeBean("Payday Loan", "1 month(Max)", "20.75-23.0%");
+		LoanTypeBean loanBean5 = new LoanTypeBean("Land Purchase Loan", "20 years(Max)", "14.2 %");
 		HashMap<String, Object> loan5 = new LinkedHashMap<String, Object>();
 		loan5.put("Type", loanBean5.getLoanType());
 		loan5.put("Time-Period", loanBean5.getTimePeriod());
 		loan5.put("Interest-Rates", loanBean5.getInterestRates());
-		LOANTYPE_LIST.add(loan5);
+		loanTypeList.add(loan5);
 
-		LoanTypeBean loanBean6 = new LoanTypeBean("Personal Loan", "5 years(Max)", "12.0-12.50%");
+		LoanTypeBean loanBean6 = new LoanTypeBean("Personal Loan", "5 years(Max)", "11.14 %");
 		HashMap<String, Object> loan6 = new LinkedHashMap<String, Object>();
 		loan6.put("Type", loanBean6.getLoanType());
 		loan6.put("Time-Period", loanBean6.getTimePeriod());
 		loan6.put("Interest-Rates", loanBean6.getInterestRates());
-		LOANTYPE_LIST.add(loan6);
+		loanTypeList.add(loan6);
 
-		// System.out.println(" ");
-		// System.out.println(" ");
-		// for (int i = 0; i < LOANTYPE_LIST.size(); i++) {
-		// System.out.println(LOANTYPE_LIST.get(i));
-		// }
 
-		LoanApplicationBean loanApplicationForm1 = new LoanApplicationBean("AP01", "BNI12345", "Mayank", "Singh", "",
-				"14/3/1973", "Meghna", "Singh", "", "Personal Loan", "BNI22343456", "Cannaught Circle", "09/12/1992",
-				"23/5/2020", "approved");
+		LoanApplicationBean loanApplicationForm1 = new LoanApplicationBean("AP01", "BNI12345", "manoj.p@gmail.com",  "Manoj", "Sharma", "", "14/3/1973", "Meghna", "Singh", "",
+				"Personal Loan", "BNI22343456", "Cannaught Circle", "09/12/1992", "23/5/2020", "approved", "50000");
 		HashMap<String, Object> form1 = new LinkedHashMap<String, Object>();
 		form1.put("ApplicationId", loanApplicationForm1.getApplicationId());
+		form1.put("Email", loanApplicationForm1.getEmail());
 		form1.put("AccountNo", loanApplicationForm1.getAccountNo());
 		form1.put("ApplicantName", loanApplicationForm1.getApplicantFirstName() + " "
 				+ loanApplicationForm1.getApplicantMiddleName() + " " + loanApplicationForm1.getApplicantLastName());
 		form1.put("DateOfBirth", loanApplicationForm1.getDateOfBirth());
 		form1.put("CoApplicantName",
 				loanApplicationForm1.getCoapplicantFirstName() + " " + loanApplicationForm1.getCoapplicantMiddleName()
-						+ " " + loanApplicationForm1.getCoapplicantLastName());
+				+ " " + loanApplicationForm1.getCoapplicantLastName());
 		form1.put("LoanType", loanApplicationForm1.getLoanChoice());
 		form1.put("BranchCode", loanApplicationForm1.getBranchCode());
 		form1.put("BranchName", loanApplicationForm1.getBranchName());
 		form1.put("OpenDate", loanApplicationForm1.getOpenDate());
 		form1.put("RequestDate", loanApplicationForm1.getRequestDate());
 		form1.put("LoanStatus", loanApplicationForm1.getFormStatus());
-		LOANFORM_LIST.add(form1);
-		CLIENT_LIST.add(form1);
+		form1.put("LoanAmount", loanApplicationForm1.getLoanAmount());
+		loanFormList.add(form1);
+		//clientList.add(form1);
+		
+		LoanApplicationBean loanApplicationForm4 = new LoanApplicationBean("AP04", "BNI12345", "shreya.p@gmail.com", "Shreya", "Singh", "", "14/3/1973", "Meghna", "Singh", "",
+				"Personal Loan", "BNI22343456", "Cannaught Circle", "09/12/1992", "23/5/2020", "approved", "30000");
+		HashMap<String, Object> form4 = new LinkedHashMap<String, Object>();
+		form4.put("ApplicationId", loanApplicationForm4.getApplicationId());
+		form4.put("AccountNo", loanApplicationForm4.getAccountNo());
+		form4.put("Email", loanApplicationForm4.getEmail());
+		form4.put("ApplicantName", loanApplicationForm4.getApplicantFirstName() + " "
+				+ loanApplicationForm4.getApplicantMiddleName() + " " + loanApplicationForm4.getApplicantLastName());
+		form4.put("DateOfBirth", loanApplicationForm4.getDateOfBirth());
+		form4.put("CoApplicantName",
+				loanApplicationForm4.getCoapplicantFirstName() + " " + loanApplicationForm4.getCoapplicantMiddleName()
+				+ " " + loanApplicationForm4.getCoapplicantLastName());
+		form4.put("LoanType", loanApplicationForm4.getLoanChoice());
+		form4.put("BranchCode", loanApplicationForm4.getBranchCode());
+		form4.put("BranchName", loanApplicationForm4.getBranchName());
+		form4.put("OpenDate", loanApplicationForm4.getOpenDate());
+		form4.put("RequestDate", loanApplicationForm4.getRequestDate());
+		form4.put("LoanStatus", loanApplicationForm4.getFormStatus());
+		form4.put("LoanAmount", loanApplicationForm1.getLoanAmount());
+		loanFormList.add(form4);
 
-		LoanApplicationBean loanApplicationForm2 = new LoanApplicationBean("AP02", "BNI22345", "Shashank", "Singh", "",
-				"14/3/1973", "Shiv", "Kumar", "Rajput", "Vehicle Loan", "BNI33343456", "Cannaught Bank", "12-11-2011",
-				"02-4-2020", "rejected");
+		LoanApplicationBean loanApplicationForm2 = new LoanApplicationBean("AP02", "BNI22345", "senku.p@gmail.com", "Senku", "Manohar", "", "14/3/1973", "Shiv", "Kumar", "Rajput",
+				"House Construction Loan", "BNI33343456", "Cannaught Bank", "12-11-2011", "02-4-2020", "rejected", "1000000");
 		HashMap<String, Object> form2 = new LinkedHashMap<String, Object>();
 		form2.put("ApplicationId", loanApplicationForm2.getApplicationId());
 		form2.put("AccountNo", loanApplicationForm2.getAccountNo());
+		form2.put("Email", loanApplicationForm2.getEmail());
 		form2.put("ApplicantName", loanApplicationForm2.getApplicantFirstName() + " "
 				+ loanApplicationForm2.getApplicantMiddleName() + " " + loanApplicationForm2.getApplicantLastName());
-		form2.put("DateOfBirth", loanApplicationForm2.getDateOfBirth());
+		form2.put("DateOfBirth",loanApplicationForm2.getDateOfBirth());
 		form2.put("CoApplicantName",
 				loanApplicationForm2.getCoapplicantFirstName() + " " + loanApplicationForm2.getCoapplicantMiddleName()
-						+ " " + loanApplicationForm2.getCoapplicantLastName());
+				+ " " + loanApplicationForm2.getCoapplicantLastName());
 		form2.put("LoanType", loanApplicationForm2.getLoanChoice());
 		form2.put("BranchCode", loanApplicationForm2.getBranchCode());
 		form2.put("BranchName", loanApplicationForm2.getBranchName());
 		form2.put("OpenDate", loanApplicationForm2.getOpenDate());
 		form2.put("RequestDate", loanApplicationForm2.getRequestDate());
 		form2.put("LoanStatus", loanApplicationForm2.getFormStatus());
-		LOANFORM_LIST.add(form2);
+		form2.put("LoanAmount", loanApplicationForm1.getLoanAmount());
+		loanFormList.add(form2);
 
-		LoanApplicationBean loanApplicationForm3 = new LoanApplicationBean("AP03", "BNI21145", "Rahul", "Yadav", "",
-				"14/3/1973", "Anjali", "Kumari", "", "Property Loan", "BNI13311456", "Purani Delhi", "03-08-1920",
-				"01-4-2020", "requested");
+		LoanApplicationBean loanApplicationForm3 = new LoanApplicationBean("AP03", "BNI21145", "tarushi.p@gmail.com", "Tarushi", "Verma", "", "14/3/1973", "Anjali", "Kumari", "",
+				"Educational Loan", "BNI13311456", "Purani Delhi", "03-08-1920", "01-4-2020", "requested", "20000");
 		HashMap<String, Object> form3 = new LinkedHashMap<String, Object>();
 		form3.put("ApplicationId", loanApplicationForm3.getApplicationId());
 		form3.put("AccountNo", loanApplicationForm3.getAccountNo());
+		form3.put("Email", loanApplicationForm3.getEmail());
 		form3.put("ApplicantName", loanApplicationForm3.getApplicantFirstName() + " "
 				+ loanApplicationForm3.getApplicantMiddleName() + " " + loanApplicationForm3.getApplicantLastName());
 		form3.put("DateOfBirth", loanApplicationForm3.getDateOfBirth());
 		form3.put("CoApplicantName",
 				loanApplicationForm3.getCoapplicantFirstName() + " " + loanApplicationForm3.getCoapplicantMiddleName()
-						+ " " + loanApplicationForm3.getCoapplicantLastName());
+				+ " " + loanApplicationForm3.getCoapplicantLastName());
 		form3.put("LoanType", loanApplicationForm3.getLoanChoice());
 		form3.put("BranchCode", loanApplicationForm3.getBranchCode());
 		form3.put("BranchName", loanApplicationForm3.getBranchName());
 		form3.put("OpenDate", loanApplicationForm3.getOpenDate());
 		form3.put("RequestDate", loanApplicationForm3.getRequestDate());
 		form3.put("LoanStatus", loanApplicationForm3.getFormStatus());
-		LOANFORM_LIST.add(form3);
+		form3.put("LoanAmount", loanApplicationForm1.getLoanAmount());
+		loanFormList.add(form3);
 	}
 }

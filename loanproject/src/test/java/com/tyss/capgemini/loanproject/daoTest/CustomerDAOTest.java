@@ -2,87 +2,191 @@ package com.tyss.capgemini.loanproject.daoTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.HashMap;
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
-import com.tyss.capgemini.loanproject.exception.*;
-import  static com.tyss.capgemini.loanproject.util.FactoryClass.*;
-import  static com.tyss.capgemini.loanproject.repository.Repository.*;
+
+import com.tyss.capgemini.loanproject.dao.CustomerDAOImpl;
+import com.tyss.capgemini.loanproject.repository.Repository;
+
+
 
 class CustomerDAOTest {
 
-	boolean isTrue = false;
-
-	static {
-		userTable();
-	}
+	CustomerDAOImpl implementation = new CustomerDAOImpl();
 
 	@Test
-	void payLoan1() {
-		isTrue=getCustomerDAO().payLoan("poonam191", 12000.0);
-		assertEquals(isTrue, true);
-	}
-	
-	
-	
-	@Test
-	void testChangePassword1() {
-
-		String username = "poonam191";
-		String newPass = "Pass@6343";
-		
-		isTrue = getCustomerDAO().changePassword(username, newPass);
-		assertEquals(isTrue, true);
-		
-	}
-	
-	void testChangePassword2() {
-
-		String username = "Aldred";
-		String newPass = "pass";
-		
-		isTrue = getCustomerDAO().changePassword(username, newPass);
-		assertEquals(isTrue, false);
-		
-	}
-
-
-	@Test
-	void TestViewLoanPrograms() {
-		List<HashMap<String, Object>> loanPrograms = getCustomerDAO().viewLoanPrograms();
-		assertEquals(loanPrograms, LOANTYPE_LIST);
-	}
-
-	
-
-	@Test
-	void checkBalance1() {
-		String username = "shreya191";
-		double balance = getCustomerDAO().checkBalance(username);
-		assertEquals(balance, 60987.2);
+	void viewLoanProgram() {
+		Repository.UserTable();
+		Boolean isTruBoolean = implementation.viewLoanPrograms();
+		assertEquals(isTruBoolean, true);
 	}
 	
 	@Test
-	void checkBalance2() {
-		String username = "ranjan@123";
-		double balance = getCustomerDAO().checkBalance(username);
-		assertEquals(balance, 0.0);
+	void changePasswordTest1() {
+		Repository.UserTable();
+		Boolean istrueBoolean = implementation.changePassword("manoj191", "Qwerty@123");
+		assertEquals(istrueBoolean, true);
+	}
+	
+	@Test
+	void changePasswordTest2() {
+		Repository.UserTable();
+		Boolean isfalseBoolean = implementation.changePassword("Manoj191", "qwerty123");
+		assertEquals(isfalseBoolean, false);
+	}
+	
+	@Test
+	void checkBalanceTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.checkBalance("manoj191");
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void checkBalanceTest2() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.checkBalance("maasdnoj191");
+		assertEquals(isBoolean, false);
+	}
+	
+	@Test
+	void payLoanTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.payLoan("manoj191", 500D);
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void payLoanTest2() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.payLoan("Manoj191", 500D);
+		assertEquals(isBoolean, false);
+	}
+	
+	@Test
+	void payLoanTest3() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.payLoan("manoj191", 100000D);
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void checkLoanTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.checkLoan("manoj191");
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void checkLoanTest2() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.checkLoan("Manoj191");
+		assertEquals(isBoolean, false);
+	}
+	
+	@Test
+	void loanApplicationForm1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.loanApplicationForm("AP198", "BNI12345", "pankaj.p@gmail.com", "Pankaj", "", "Tripathy", "14/12/1995", "Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987", "22/5/2020", "1233");
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void loanApplicationForm2() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.loanApplicationForm("AP198", "BNI12345", "pankaj.p@gmail.com", "Pankaj", "", "Tripathy", "14/12/1995", "", "", "", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987", "22/5/2020", "1233");
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void loanApplicationForm3() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.loanApplicationForm("AP1234", "BNI12345", "anand.p@gmail.com", "Anand", "Singh", "", "14/12/1995", "Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987", "22/5/2020", "1231");
+		assertEquals(isBoolean, true);
 	}
 	
 	
 	@Test
-	void checkLoan1() {
-		String username = "shreya191";
-		double loanAmount = getCustomerDAO().checkLoan(username);
-		assertEquals(loanAmount, 90700);
+	void usernameExists1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.usernameExists("asd");
+		assertEquals(isBoolean, false);
 	}
 	
 	@Test
-	void checkLoan2() {
-		String username = "shresh30";
-		double loanAmount = getCustomerDAO().checkLoan(username);
-		assertEquals(loanAmount, 0.0);
+	void usernameExists2() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.usernameExists("manoj191");
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void loanTypes1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.loanTypes();
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void loanTypes2() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.loanTypes();
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void loanTypes3() {
+		Repository.UserTable();
+		String string = implementation.loanTypes(1);
+		assertEquals("House Construction Loan", string);
+	}
+	
+	@Test
+	void viewApplicationsTest1() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.viewApplications("manoj191");
+		assertEquals(boolean1, true);
+	}
+	
+	@Test
+	void emailExistsTest1() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.emailExists("manoj.p@gmail.com");
+		assertEquals(boolean1, false);
+	}
+	
+	@Test
+	void emailExistsTest2() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.emailExists("manoj.p@gmail.com");
+		assertEquals(boolean1, false);
+	}
+	
+	@Test
+	void usernameExistsTest1() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.usernameExists("manoj191");
+		assertEquals(boolean1, true);
+	}
+	
+	@Test
+	void usernameExistsTest2() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.usernameExists("asdasd");
+		assertEquals(boolean1, false);
+	}
+	
+	@Test
+	void fetchMailTest1() {
+		Repository.UserTable();
+		String string = implementation.fetchMail("manoj191");
+		assertEquals(string, "manoj.p@gmail.com");
+	}
+	
+	@Test
+	void fetchMailTest2() {
+		Repository.UserTable();
+		String string = implementation.fetchMail("asdasd");
+		assertEquals(string, "asdasd");
 	}
 
 }

@@ -2,72 +2,173 @@ package com.tyss.capgemini.loanproject.daoTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.HashMap;
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
-import static com.tyss.capgemini.loanproject.repository.Repository.*;
-import static com.tyss.capgemini.loanproject.util.FactoryClass.*;
+
+import com.tyss.capgemini.loanproject.dao.AdminDAOImpl;
+import com.tyss.capgemini.loanproject.repository.Repository;
+
+
 class AdminDAOTest {
 
-	static {
-		userTable();
-	}
-
-	boolean isTrue;
+	AdminDAOImpl implementation = new AdminDAOImpl();
 
 	@Test
-	void testUpdateLoan1() {
-		isTrue = getAdminDAO().loanUpdate("House Loan", 1, "Home Loan");
-		assertEquals(isTrue, true);
+	void deleteLoanTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.deleteLoan("Personal Loan");
+		assertEquals(isBoolean, true);
+	}
+	@Test
+	void deleteLoanTest2() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.deleteLoan("asdasdsd Loan");
+		assertEquals(isBoolean, false);
+	}
+	
+	@Test
+	void loanUpdateTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.loanUpdate("House Loan", 1, "Garib Loan");
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void loanUpdateTest2() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.loanUpdate("asdasd", 1, "Garib Loan");
+		assertEquals(isBoolean, false);
+	}
+	
+	@Test
+	void loanUpdateTest3() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.loanUpdate("House Loan", 5, "Garib Loan");
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void viewLoanProgramsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.viewLoanPrograms();
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void insertLoanTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.insertLoan("House Loan2", "12 months", "10%");
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void approvedFormsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.approvedForms();
+		assertEquals(isBoolean, true);
 	}
 
 	@Test
-	void testUpdateLoan2() {
-		isTrue = getAdminDAO().loanUpdate("Property Loan", 1, "Home Loan");
-		assertEquals(isTrue, false);
-	}
-
-	@Test
-	void testInsertLoan() {
-		isTrue = getAdminDAO().insertLoan("Business Loan", "30 years(Max)", "8.75-11.25%");
-		assertEquals(isTrue, true);
-	}
-
-	
-	@Test
-	void testViewClients() {
-		List<HashMap<String , Object>> clients=getAdminDAO().viewClients();
-		assertEquals(clients,CLIENT_LIST);
+	void rejectedFormsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.rejectedForms();
+		assertEquals(isBoolean, true);
 	}
 	
 	@Test
-	void addClient1() {
-		isTrue=getAdminDAO().addClients("AP01");
-		assertEquals(isTrue, true);
+	void requestedFormsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.requestedForms();
+		assertEquals(isBoolean, true);
 	}
 	
 	@Test
-	void addClient2() {
-		isTrue=getAdminDAO().addClients("AP090");
-		assertEquals(isTrue, false);
+	void viewClientsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.viewClients();
+		assertEquals(isBoolean, true);
 	}
 	
 	@Test
-	void testApprovedForms() {
-		List<HashMap<String, Object>> approved=getAdminDAO().approvedForms();
-		assertEquals(approved, APPROVEDFORM_LIST);
+	void addClientsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.addClients("AP01", "manuqw@gmail.com", "qwerty@123A", "mayank", "singh", "8787878787");
+		assertEquals(isBoolean, true);
 	}
 	
 	@Test
-	void testRejectedForms() {
-		List<HashMap<String, Object>> rejected=getAdminDAO().rejectedForms();
-		assertEquals(rejected , REJECTEDFORM_LIST);
+	void addClientsTest2() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.addClients("AP02", "naruto@gmail.com", "qwerty@123", "Naruto", "Uzumaki", "7234232434");
+		assertEquals(isBoolean, true);
 	}
 	
 	@Test
-	void testRequestedForms() {
-		List<HashMap<String, Object>> requested=getAdminDAO().requestedForms();
-		assertEquals(requested, REQUESTEDFORM_LIST);
+	void updateType1() {
+		Repository.UserTable();
+		String iString = implementation.updateType("Personal Loan", "asdasd");
+		assertEquals(iString, "asdasd");
+	}
+	
+	@Test
+	void updateType2() {
+		Repository.UserTable();
+		String iString = implementation.updateType("wqeqwe", "asdasd");
+		assertEquals(iString, null);
+	}
+	
+	@Test
+	void updateTimePeriodTest1() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.updateTimePeriod("Personal Loan", "23");
+		assertEquals(boolean1, true);
+	}
+	
+	@Test
+	void updateTimePeriodTest2() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.updateTimePeriod("asdasdasd", "23");
+		assertEquals(boolean1, false);
+	}
+	
+	@Test
+	void updateInterestRateTest1() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.updateRates("Personal Loan", "12");
+		assertEquals(boolean1, true);
+	}
+	
+	@Test
+	void updateInterestRateTest2() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.updateRates("asdasdasd", "12");
+		assertEquals(boolean1, false);
+	}
+	
+	@Test
+	void usernameExistsTest1() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.usernameExists("manoj191");
+		assertEquals(boolean1, true);
+	}
+	
+	@Test
+	void usernameExistsTest2() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.usernameExists("asdasd");
+		assertEquals(boolean1, false);
+	}
+	
+	@Test
+	void emailExistsTest1() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.emailExists("manoj.p@gamil.com");
+		assertEquals(boolean1, true);
+	}
+	
+	@Test
+	void emailExistsTest2() {
+		Repository.UserTable();
+		Boolean boolean1 = implementation.emailExists("asdasd");
+		assertEquals(boolean1, true);
 	}
 }

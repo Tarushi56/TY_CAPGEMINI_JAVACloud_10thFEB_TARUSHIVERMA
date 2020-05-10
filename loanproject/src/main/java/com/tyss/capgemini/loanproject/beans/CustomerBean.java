@@ -18,9 +18,9 @@ public class CustomerBean implements Serializable {
 	private double accountBal;
 	private String role;
 	private double loanAmount;
-
-	public CustomerBean(String username, String userid, String email, String password, String firstname,
-			String lastname, long phone, String role, double accountBal, double loanAmount) {
+	
+	public CustomerBean(String username, String userid, String email, String password, String firstname, String lastname,
+			long phone, String role, double accountBal, double loanAmount) {
 		super();
 		this.username = username;
 		this.userid = userid;
@@ -32,46 +32,5 @@ public class CustomerBean implements Serializable {
 		this.role = role;
 		this.accountBal = accountBal;
 		this.loanAmount = loanAmount;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public String getUserid() {
-		return userid;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public long getPhone() {
-		return phone;
-	}
-
-	public double getAccountBal() {
-		return accountBal;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public double getLoanAmount() {
-		return loanAmount;
-
 	}
 }

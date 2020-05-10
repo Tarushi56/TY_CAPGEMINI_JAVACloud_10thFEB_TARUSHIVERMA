@@ -10,15 +10,30 @@ public interface AdminDAO {
 
 	public boolean deleteLoan(String loantype);
 
-	public List<HashMap<String, Object>> viewLoanPrograms();
+	public boolean viewLoanPrograms();
 
-	public boolean addClients(String appidString);
+	public boolean addClients(String username, String email, String password, String firstname, String lastname,
+			String phone);
 
-	public List<HashMap<String, Object>> viewClients();
+	public boolean viewClients();
 
-	public List<HashMap<String, Object>> approvedForms();
+	public boolean approvedForms();
 
-	public List<HashMap<String, Object>> rejectedForms();
+	public boolean rejectedForms();
 
-	public List<HashMap<String, Object>> requestedForms();
+	public boolean requestedForms();
+
+	public boolean loanTypes();
+
+	public String loanTypes(String k);
+
+	public boolean emailExists(String email);
+
+	public boolean usernameExists(String username);
+
+	public String updateType(String loanType, String newType);
+
+	public boolean updateTimePeriod(String loanType, String newTime);
+
+	public boolean updateRates(String loanType, String newRate);
 }

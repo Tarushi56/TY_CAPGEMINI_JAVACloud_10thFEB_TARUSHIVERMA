@@ -2,46 +2,72 @@ package com.tyss.capgemini.loanproject.servicesTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.HashMap;
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
 
+import com.tyss.capgemini.loanproject.exception.FormReviewChoiceException;
 import com.tyss.capgemini.loanproject.repository.Repository;
+import com.tyss.capgemini.loanproject.services.LadServicesImpl;
 
-import static com.tyss.capgemini.loanproject.util.FactoryClass.*;
-import static com.tyss.capgemini.loanproject.repository.Repository.*;
-import static com.tyss.capgemini.loanproject.dao.LadDAOImpl.*;
 
 class LADServiceTest {
 
-	boolean isTrue;
-
-	static {
-		userTable();
+LadServicesImpl implementation = new LadServicesImpl();
+	
+	@Test
+	void ladReviewFormTest1() {
+		Repository.UserTable();
+		try {
+			Boolean isBoolean = implementation.ladReviewForms("AP03", "asdasd");
+			assertEquals(isBoolean, true);
+		} catch (Exception e) {
+			assertThrows(FormReviewChoiceException.class, ()->{
+				implementation.ladReviewForms("AP03", "asdasd");
+			});
+		}
 	}
+	
 
 	@Test
-	void testViewLoanPrograms() {
-		List<HashMap<String, Object>> loanPrograms = getLadServices().viewLoanPrograms();
-		assertEquals(loanPrograms, LOANTYPE_LIST);
+	void ladReviewFormTest2() {
+		Repository.UserTable();
+		try {
+			Boolean isBoolean = implementation.ladReviewForms("AP031", "asdasd");
+			assertEquals(isBoolean, false);
+		} catch (Exception e) {
+			assertThrows(FormReviewChoiceException.class, ()->{
+				implementation.ladReviewForms("AP03", "asdasd");
+			});
+		}
 	}
-
+	
 	@Test
-	void testLadReviewForms() {
-		isTrue = getLadServices().ladReviewForms("AP03", "rejected");
-		assertEquals(isTrue, true);
+	void viewLoanProgramsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.viewLoanPrograms();
+		assertEquals(isBoolean, true);
 	}
-
+	
 	@Test
-	void testLadViewForms() {
-		List<HashMap<String, Object>> loanForms = getLadServices().ladViewForms("vehicle Loan");
-		assertEquals(loanForms, Repository.FORMS);
+	void ladViewFormsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.ladViewForms("Personal Loan");
+		assertEquals(isBoolean, true);
 	}
-
+	
+	
+	
+	
 	@Test
-	void testRequestedForms() {
-		List<HashMap<String, Object>> isEquals = getLadServices().requestedForms();
-		assertEquals(isEquals, REQUESTED_FORMS);
+	void ladViewFormsTest2() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.ladViewForms("asdasd");
+		assertEquals(isBoolean, false);
+	}
+	
+	@Test
+	void requestedFormsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.requestedForms();
+		assertEquals(isBoolean, true);
 	}
 }

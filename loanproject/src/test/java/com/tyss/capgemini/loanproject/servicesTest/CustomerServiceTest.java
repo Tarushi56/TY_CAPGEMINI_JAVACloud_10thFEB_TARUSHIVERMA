@@ -1,90 +1,232 @@
 package com.tyss.capgemini.loanproject.servicesTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
-//import com.tyss.capgemini.loanproject.exception.DateFormatMismatchException;
-import com.tyss.capgemini.loanproject.exception.*;
 
+import com.tyss.capgemini.loanproject.exception.DateFormatMismatchException;
+import com.tyss.capgemini.loanproject.exception.DateLimitException;
+import com.tyss.capgemini.loanproject.exception.InsufficientBalanceException;
+import com.tyss.capgemini.loanproject.exception.LoanExcessException;
 import com.tyss.capgemini.loanproject.exception.PasswordFormatMismatchException;
-import static com.tyss.capgemini.loanproject.util.FactoryClass.*;
-import static com.tyss.capgemini.loanproject.repository.Repository.*;
+import com.tyss.capgemini.loanproject.repository.Repository;
+import com.tyss.capgemini.loanproject.services.CustomerServicesImpl;
+
 class CustomerServiceTest {
 
-	static {
-		userTable();
-	}
-	
-	boolean isTrue;
-	@Test
-	void testApplicationForm() {
-		try {
-		boolean isTrue=getCustomerServices().loanApplicationForm("AP01", "BNI12345", "Rajesh","Kumar", "Santoshi",
-				"14/3/1973", "Rakesh","Kumar", "Panda", "Personal Loan", "BNI22343456",
-				"Cannaught Circle", "09/12/1992", "23/5/2020", "submit");
-		assertEquals(isTrue, true);
-		}catch (DateFormatMismatchException e) {
-			assertThrows(DateFormatMismatchException.class, () -> {
-				getCustomerServices().loanApplicationForm("AP01", "BNI12345", "Rajesh","Kumar", "Santoshi",
-						"14/3/1973", "Rakesh","Kumar", "Panda", "Personal Loan", "BNI22343456",
-						"Cannaught Circle", "09/12/1992", "23/5/2020", "submit");
-			});
-		}catch (DateOutOfBoundException  e) {
-			assertThrows(DateOutOfBoundException.class, () -> {
-				getCustomerServices().loanApplicationForm("AP01", "BNI12345", "Rajesh","Kumar", "Santoshi",
-						"14/3/2020", "Rakesh","Kumar", "Panda", "Personal Loan", "BNI22343456",
-						"Cannaught Circle", "09/12/1992", "23/5/2020", "submit");
-			});
-		}
-	}
-	
-	@Test
-	void changePassword() {
+	CustomerServicesImpl implementation = new CustomerServicesImpl();
 
-		String username = "praveen191";
-		String newPass = "Pass@2";
+	@Test
+	void changePasswordTest1() {
 		try {
-			isTrue = getCustomerServices().changePassword(username, newPass);
-			assertEquals(isTrue, true);
+			Boolean istrueBoolean = implementation.changePassword("Praveen123@", "qwerty");
+			assertEquals(istrueBoolean, true);
 		} catch (Exception e) {
 			assertThrows(PasswordFormatMismatchException.class, () -> {
-				getCustomerDAO().changePassword(username, newPass);
+				implementation.changePassword("Praveen123", "qwerty");
 			});
 		}
+		// Boolean istrueBoolean = implementation.changePassword("Praveen123",
+		// "qwerty@123");
+		// assertEquals(istrueBoolean, true);
 	}
-	
+
 	@Test
-	void payLoan1() {
-		String username = "poonam191";
-		double loanPay = 50000;
+	void changePasswordTest2() {
 		try {
-			isTrue = getCustomerDAO().payLoan(username, loanPay);
+			Boolean istrueBoolean = implementation.changePassword("Praveen123@", "qwerty");
+			assertEquals(istrueBoolean, true);
+		} catch (Exception e) {
+			assertThrows(PasswordFormatMismatchException.class, () -> {
+				implementation.changePassword("Praveen123", "qwerty");
+			});
+		}
+		// Boolean istrueBoolean = implementation.changePassword("Praveen123",
+		// "qwerty@123");
+		// assertEquals(istrueBoolean, true);
+	}
+
+	@Test
+	void viewLoanProgramsTest() {
+		Repository.UserTable();
+		Boolean isTrue = implementation.viewLoanPrograms();
+		assertEquals(isTrue, true);
+	}
+
+	@Test
+	void checkBalanceTest1() {
+		Repository.UserTable();
+		Boolean isTrue = implementation.checkBalance("manoj191");
+		assertEquals(isTrue, true);
+	}
+
+	@Test
+	void checkBalanceTest2() {
+		Repository.UserTable();
+		Boolean isFalse = implementation.checkBalance("mayank191");
+		assertEquals(isFalse, false);
+	}
+
+	@Test
+	void payLoanTest1() {
+		Repository.UserTable();
+		try {
+			Boolean isTrue = implementation.payLoan("manoj191", 500D);
 			assertEquals(isTrue, true);
 		} catch (LoanExcessException e) {
 			assertThrows(LoanExcessException.class, () -> {
-				getCustomerDAO().payLoan(username, loanPay);
+				implementation.payLoan("manoj191", 500D);
 			});
 		} catch (InsufficientBalanceException e) {
 			assertThrows(InsufficientBalanceException.class, () -> {
-				getCustomerDAO().payLoan(username, loanPay);
+				implementation.payLoan("manoj191", 500D);
+			});
+		}
+	}
+
+	@Test
+	void payLoanTest2() {
+		Repository.UserTable();
+		try {
+			Boolean isFalse = implementation.payLoan("asdanoj191", 500D);
+			assertEquals(isFalse, false);
+		} catch (LoanExcessException e) {
+			assertThrows(LoanExcessException.class, () -> {
+				implementation.payLoan("manoj191", 500D);
+			});
+		} catch (InsufficientBalanceException e) {
+			assertThrows(InsufficientBalanceException.class, () -> {
+				implementation.payLoan("manoj191", 500D);
+			});
+		}
+	}
+
+	@Test
+	void checkLoanTest1() {
+		Repository.UserTable();
+		Boolean isTrue = implementation.checkLoan("manoj191");
+		assertEquals(isTrue, true);
+	}
+
+	@Test
+	void checkLoanTest2() {
+		Repository.UserTable();
+		Boolean isFalse = implementation.checkLoan("nadaanoj191");
+		assertEquals(isFalse, false);
+	}
+
+	@Test
+	void loanApplicationForm1() {
+		Repository.UserTable();
+		try {
+			Boolean isBoolean = implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy",
+					"14/12/1995", "Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987",
+					"22/5/2020", "submit", "1234");
+			assertEquals(isBoolean, true);
+		} catch (DateLimitException e) {
+			assertThrows(DateLimitException.class, () -> {
+				implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy", "14/12/1995",
+						"Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987",
+						"22/5/2020", "submit", "1234");
+			});
+		} catch (DateFormatMismatchException e) {
+			assertThrows(DateFormatMismatchException.class, () -> {
+				implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy", "14/12/1995",
+						"Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987",
+						"22/5/2020", "submit", "1234");
+			});
+		}
+	}
+
+	@Test
+	void loanApplicationForm2() {
+		Repository.UserTable();
+		try {
+			Boolean isBoolean = implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy",
+					"14/12/1995", "Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987",
+					"22/5/2020", "cancel", "1234");
+			assertEquals(isBoolean, true);
+		} catch (DateLimitException e) {
+			assertThrows(DateLimitException.class, () -> {
+				implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy", "14/12/1995",
+						"Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987",
+						"22/5/2020", "cancel", "1234");
+			});
+		} catch (DateFormatMismatchException e) {
+			assertThrows(DateFormatMismatchException.class, () -> {
+				implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy", "14/12/1995",
+						"Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987",
+						"22/5/2020", "cancel", "1234");
+			});
+		}
+	}
+
+	@Test
+	void loanApplicationForm3() {
+		Repository.UserTable();
+		try {
+			Boolean isBoolean = implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy",
+					"14/12/1995", "Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987",
+					"22/5/2020", "asdasd", "1234");
+			assertEquals(isBoolean, true);
+		} catch (DateLimitException e) {
+			assertThrows(DateLimitException.class, () -> {
+				implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy", "14/12/1995",
+						"Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987",
+						"22/5/2020", "asdasd", "1234");
+			});
+		} catch (DateFormatMismatchException e) {
+			assertThrows(DateFormatMismatchException.class, () -> {
+				implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy", "14/12/1995",
+						"Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987",
+						"22/5/2020", "asdasd", "1234");
 			});
 		}
 	}
 	
 	@Test
-	void payLoan2() {
-		String username = "Mahim@123";
-		double loanPay = 500000;
+	void loanApplicationForm4() {
+		Repository.UserTable();
 		try {
-			isTrue = getCustomerDAO().payLoan(username, loanPay);
-			assertEquals(isTrue, false);
-		} catch (LoanExcessException e) {
-			assertThrows(LoanExcessException.class, () -> {
-				getCustomerDAO().payLoan(username, loanPay);
+			Boolean isBoolean = implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy",
+					"14/12/1995", "Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12-2-1987",
+					"22/5/2020", "submit", "1234");
+			assertEquals(isBoolean, true);
+		} catch (DateLimitException e) {
+			assertThrows(DateLimitException.class, () -> {
+				implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy", "14/12/1995",
+						"Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12-2-1987",
+						"22/5/2020", "submit", "1234");
 			});
-		} catch (InsufficientBalanceException e) {
-			assertThrows(InsufficientBalanceException.class, () -> {
-				getCustomerDAO().payLoan(username, loanPay);
+		} catch (DateFormatMismatchException e) {
+			assertThrows(DateFormatMismatchException.class, () -> {
+				implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy", "14/12/1995",
+						"Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12-2-1987",
+						"22/5/2020", "submit", "1234");
+			});
+		}
+	}
+	
+	@Test
+	void loanApplicationForm5() {
+		Repository.UserTable();
+		try {
+			Boolean isBoolean = implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy",
+					"14/12/3000", "Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987",
+					"22/5/2020", "submit", "1234");
+			assertEquals(isBoolean, true);
+		} catch (DateLimitException e) {
+			assertThrows(DateLimitException.class, () -> {
+				implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy", "14/12/3000",	
+						"Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987",
+						"22/5/2020", "submit", "1234");
+			});
+		} catch (DateFormatMismatchException e) {
+			assertThrows(DateFormatMismatchException.class, () -> {
+				implementation.loanApplicationForm("AP198", "BNI12345", "Pankaj", "", "Tripathy", "14/12/3000",
+						"Ranjan", "Singh", "Ranjup", "House Loan", "BNI123421412", "Kanchipuram", "12/2/1987",
+						"22/5/2020", "submit", "1234");
 			});
 		}
 	}

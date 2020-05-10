@@ -2,74 +2,141 @@ package com.tyss.capgemini.loanproject.servicesTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.HashMap;
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
-import static com.tyss.capgemini.loanproject.util.FactoryClass.*;
-import static com.tyss.capgemini.loanproject.repository.Repository.*;
-import com.tyss.capgemini.loanproject.exception.*;
+
+import com.tyss.capgemini.loanproject.exception.InvalidLoanTypeException;
+import com.tyss.capgemini.loanproject.repository.Repository;
+import com.tyss.capgemini.loanproject.services.AdminServicesImpl;
+
 
 class AdminServiceTest {
 
-boolean isTrue;
-	
-	static {
-		userTable();
+	AdminServicesImpl implementation = new AdminServicesImpl();
+
+	@Test
+	void viewCLientsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.viewClients();
+		assertEquals(isBoolean, true);
 	}
 
 	@Test
-	void test() {
-		List<HashMap<String, Object>> isEquals = getAdminServices().viewLoanPrograms();
-		assertEquals(isEquals, LOANTYPE_LIST);
-	}
-
-	@Test
-	void testAddClient1() {
+	void loanUdpateTest1() {
+		Repository.UserTable();
 		try {
-			isTrue = getAdminServices().addClients("AP01");
-			assertEquals(isTrue, true);
-		} catch (InvalidAppliactionIdException  e) {
-			assertThrows(InvalidAppliactionIdException .class, () ->{
-				getAdminServices().addClients("AP01");
+			Boolean isBoolean = implementation.loanUpdate("House Loan", 1, "garib loan");
+			assertEquals(isBoolean, true);
+		} catch (Exception e) {
+			assertThrows(InvalidLoanTypeException.class, () -> {
+				implementation.loanUpdate("House Loan", 1, "garib loan");
 			});
 		}
 	}
 	
 	@Test
-	void testAddClient2() {
+	void loanUdpateTest2() {
+		Repository.UserTable();
 		try {
-			isTrue = getAdminServices().addClients("AP90");
-			assertEquals(isTrue, false);
-		} catch (InvalidAppliactionIdException  e) {
-			assertThrows(InvalidAppliactionIdException .class, () ->{
-				getAdminServices().addClients("AP90");
+			Boolean isBoolean = implementation.loanUpdate("asdasd", 1, "garib loan");
+			assertEquals(isBoolean, false);
+		} catch (Exception e) {
+			assertThrows(InvalidLoanTypeException.class, () -> {
+				implementation.loanUpdate("asdasd", 1, "garib loan");
 			});
 		}
 	}
 	
 	@Test
-	void testDeleteLoan1() {
+	void loanUdpateTest3() {
+		Repository.UserTable();
 		try {
-			isTrue = getAdminServices().deleteLoan("House Loan");
-			assertEquals(isTrue, true);
-		} catch (InvalidLoanTypeException e) {
-			assertThrows(InvalidLoanTypeException.class, () ->{
-				getAdminServices().deleteLoan("House Loan");
+			Boolean isBoolean = implementation.loanUpdate("House Loan", 5, "garib loan");
+			assertEquals(isBoolean, true);
+		} catch (Exception e) {
+			assertThrows(InvalidLoanTypeException.class, () -> {
+				implementation.loanUpdate("House Loan", 5, "garib loan");
 			});
 		}
 	}
 	
 	@Test
-	void testDeleteLoan2() {
+	void insertLoanTest1() {
+		Repository.UserTable();
+		Boolean isBoolean =implementation.insertLoan("garib loan", "15 months", "29%");
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void insertLoanTest2() {
+		Repository.UserTable();
+		Boolean isBoolean =implementation.insertLoan("onion loan", "15 months", "29%");
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void deleteLoanTest1() {
+		Repository.UserTable();
 		try {
-			isTrue = getAdminServices().deleteLoan("Business Loan");
-			assertEquals(isTrue, false);
-		} catch (InvalidLoanTypeException e) {
-			assertThrows(InvalidLoanTypeException.class, () ->{
-				getAdminServices().deleteLoan("Buisness Loan");
+			Boolean isBoolean = implementation.deleteLoan("House Loan");
+			assertEquals(isBoolean, true);
+		} catch (Exception e) {
+			assertThrows(InvalidLoanTypeException.class, ()->{
+				implementation.deleteLoan("House Loan");
 			});
 		}
 	}
-
+	
+	@Test
+	void deleteLoanTest2() {
+		Repository.UserTable();
+		try {
+			Boolean isBoolean = implementation.deleteLoan("tomato Loan");
+			assertEquals(isBoolean, false);
+		} catch (Exception e) {
+			assertThrows(InvalidLoanTypeException.class, ()->{
+				implementation.deleteLoan("tomato Loan");
+			});
+		}
+	}
+	
+	@Test
+	void deleteLoanTest3() {
+		Repository.UserTable();
+		try {
+			Boolean isBoolean = implementation.deleteLoan("asdasd");
+			assertEquals(isBoolean, true);
+		} catch (Exception e) {
+			assertThrows(InvalidLoanTypeException.class, ()->{
+				implementation.deleteLoan("asdasd");
+			});
+		}
+	}
+	
+	@Test
+	void viewLoanProgramsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.viewLoanPrograms();
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void approvedFormsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.approvedForms();
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void rejectedFormsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.rejectedForms();
+		assertEquals(isBoolean, true);
+	}
+	
+	@Test
+	void requestedFormsTest1() {
+		Repository.UserTable();
+		Boolean isBoolean = implementation.requestedForms();
+		assertEquals(isBoolean, true);
+	}
 }
