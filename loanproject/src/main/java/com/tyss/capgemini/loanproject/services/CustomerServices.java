@@ -118,4 +118,6 @@ public interface CustomerServices {
 	 * @return
 	 */
 	public Double returnBal(String username);
-	}
+	public String autoGenerateId();	
+
+}

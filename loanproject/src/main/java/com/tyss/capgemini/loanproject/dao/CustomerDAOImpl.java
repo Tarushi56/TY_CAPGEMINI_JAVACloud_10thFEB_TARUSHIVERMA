@@ -17,6 +17,14 @@ public class CustomerDAOImpl implements CustomerDAO {
 	Logger logger = LogManager.getLogger(CustomerDAOImpl.class);
 	Repository repo = new Repository();
 	
+	/**
+	 * Makes use of the Repository to find the loanTypeList list and prints 
+	 * the values of keys stored in HashMap objects stores in the list.
+	 *
+	 * @return true if data is present in loanTypeList list and prints the 
+	 * 			the respective data associated with the list, or false
+	 * 			if the list is empty.
+	 */
 	@Override
 	public boolean viewLoanPrograms() {
 		if (Repository.loanTypeList.size() != 0) {
@@ -30,7 +38,34 @@ public class CustomerDAOImpl implements CustomerDAO {
 			return true;
 		} else return false;
 	}
-	
+
+	/**
+	 * Adds key value data to HashMap using put(),then
+	 * adds the created HashMap object to the loanFormList
+	 * list.
+	 *
+	 * @param hash hash for key
+	 * @param applicationId of String type
+	 * @param accountNo of String type
+	 * @param email of String type
+	 * @param applicantFirstName of String type
+	 * @param applicantMiddleName of String type
+	 * @param applicantLastName of String type
+	 * @param dateOfBirth of String type
+	 * @param coapplicantFirstName of String type
+	 * @param coapplicantMiddleName of String type
+	 * @param coappllicantLastName of String type
+	 * @param loanChoice of String type
+	 * @param branchCode of String type
+	 * @param branchName of String type
+	 * @param openDate of String type
+	 * @param requestDate of String type
+	 * @param loanAmount of String type
+	 * @return true if the data is being added to the 
+	 * 		loanFormList list, or false if the data is 
+	 * 		not added.
+	 * 
+	 */
 	@Override
 	public boolean loanApplicationForm(String applicationId, String accountNo, String email, String applicantFirstName,
 			String applicantMiddleName, String applicantLastName, String dateOfBirth, String coapplicantFirstName,
@@ -70,8 +105,18 @@ public class CustomerDAOImpl implements CustomerDAO {
 		logger.info("LoanStatus: " + loanHashMap.get("LoanStatus"));
 		logger.info("*******************************");
 		return true;
-	}
+	}	
 	
+	/**
+	 * Checks whether the username is present in the HashMap object stored in the
+	 * list then changes the value of "password" key present in the object to 
+	 * newPass argument value. 
+	 *
+	 * @param custUsername of String type
+	 * @param newPass of String type
+	 * @return true if username is present in the any of the Hashmap objects
+	 * 			stored in the list, or false if the username is not present.
+	 */
 	@Override
 	public boolean changePassword(String custUsername, String newPass) {
 		for (int j = 0; j < Repository.customerList.size(); j++) {
@@ -82,7 +127,16 @@ public class CustomerDAOImpl implements CustomerDAO {
 			}
 		} return false;
 	}
-
+	
+	/**
+	 * Checks whether the username value passed as argument is
+	 * present in any of the HashMap objects stored in customerList
+	 * list and prints the "AccountBal" key value.
+	 *
+	 * @param custUsername of String type
+	 * @return true if username is present in the any of the Hashmap objects
+	 * 			stored in the list, or false if the username is not present.
+	 */
 	@Override
 	public boolean checkBalance(String custUsername) {
 		for (int i = 0; i < Repository.customerList.size(); i++) {
@@ -93,23 +147,42 @@ public class CustomerDAOImpl implements CustomerDAO {
 		} return false;
 	}
 	
+	/**
+	 * Checks whether the username and is present in the customerList and deduces the
+	 * loanPay argument amount from the "AccountBal" key value of the particular HashMap
+	 * object stored in the list.
+	 * 
+	 * @param custUsername of String type
+	 * @param loanPay of Double type
+	 * @return true if the operation performed with loanPay argument value and "AccountBal"
+	 * 			key value is successful, or false if the operation is unsuccessful. 
+	 */
 	@Override
 	public boolean payLoan(String custUsername, Double loanPay) {
 		for (int i = 0; i < Repository.customerList.size(); i++) {
 			if (custUsername.equals(Repository.customerList.get(i).get("username"))) {
 				Double loan = (Double) Repository.customerList.get(i).get("loanAmount");
 				Double bal = (Double) Repository.customerList.get(i).get("AccountBal");
-					logger.info("Amount paid successfully");
-					Double newbal = bal - loanPay;
-					Double newloan = loan - loanPay;
-					Repository.customerList.get(i).put("AccountBal", newbal);
-					Repository.customerList.get(i).put("loanAmount", newloan);
-					return true;
-				}
+				logger.info("Amount paid successfully");
+				Double newbal = bal - loanPay;
+				Double newloan = loan - loanPay;
+				Repository.customerList.get(i).put("AccountBal", newbal);
+				Repository.customerList.get(i).put("loanAmount", newloan);
+				return true;
+			}
 		}
 		return false;
 	}
 	
+	/**
+	 * Checks whether the username value passed as argument is
+	 * present in any of the HashMap objects stored in customerList
+	 * list and prints the "loanAmount" key value.
+	 *
+	 * @param custUsername of String type
+	 * @return true if username is present in the any of the Hashmap objects
+	 * 			stored in the list, or false if the username is not present.
+	 */
 	@Override
 	public boolean checkLoan(String custUsername) {
 		for (int i = 0; i < Repository.customerList.size(); i++) {
@@ -119,8 +192,14 @@ public class CustomerDAOImpl implements CustomerDAO {
 			}
 		} return false;
 	}
-	
-	
+
+	/**
+	 * Prints all the "Type" key values present in the HashMap objects in 
+	 * loanTypeList list.
+	 *
+	 * @return true if the data is present in the loanTypeList list, or false
+	 * 			if the data is not present or the list is empty
+	 */
 	@Override
 	public boolean loanTypes() {
 		for (int i = 0; i < Repository.loanTypeList.size(); i++) {
@@ -129,17 +208,36 @@ public class CustomerDAOImpl implements CustomerDAO {
 		return true;
 	}
 	
+	/**
+	 * Checks if the object at particular index is present and returns the
+	 * "Type" key value of the particular HashMap object in the list.
+	 * 
+	 * @param k of String Type
+	 * @return String value of "Type" key present in the particular HashMap
+	 * 			object stored in the loanTypeList list.
+	 */
 	@Override
 	public String loanTypes(int k) {
-		for (int i = 1; i <= Repository.loanTypeList.size(); i++) {
-			if (i==k) {
+		for (int i = 0; i < Repository.loanTypeList.size(); i++) {
+			if ((i+1)==k) {
 				return (String) Repository.loanTypeList.get(i).get("Type");
 			}
-			logger.info(i + "> " + Repository.loanTypeList.get(i).get("Type"));
+			logger.info((i+1) + "> " + Repository.loanTypeList.get(i).get("Type"));
 		}
 		return "invalid choice";
 	}
-			
+	
+	/**
+	 * Checks whether the username value passed as 
+	 * argument of the method is present in the customerList list 
+	 * stored in Repository and prints the related key values of
+	 * the HashMap object stored in particular index.
+	 *
+	 * @param custUsername of String type
+	 * @return true if the argument value passed is present in the list
+	 * 			or false if the argument values are not present in the
+	 * 			list and displayes the message.
+	 */
 	@Override
 	public boolean viewApplications(String custUsername) {
 		String email = null;
@@ -174,9 +272,16 @@ public class CustomerDAOImpl implements CustomerDAO {
 		} else {
 			return true;
 		}
-		
 	}
 	
+	/**
+	 * Checks whether the email value passed as argument is
+	 * present in mainList list.
+	 *
+	 * @param email of String type
+	 * @return false if the data is present in the mainList
+	 * 			list, or true if the data is not found.
+	 */
 	@Override
 	public boolean emailExists(String email) {
 		int count = 0;
@@ -191,10 +296,16 @@ public class CustomerDAOImpl implements CustomerDAO {
 		} else {
 			return true;
 		}
-
 	}
 
-
+	/**
+	 * Checks whether the username value passed as argument is
+	 * present in mainList list.
+	 *
+	 * @param username of String type
+	 * @return false if the data is present in the mainList
+	 * 			list, or true if the data is not found.
+	 */
 	@Override
 	public boolean usernameExists(String username) {
 		for (int i = 0; i < Repository.mainList.size(); i++) {
@@ -206,6 +317,15 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	}
 	
+	/**
+	 * Checks whether the id value passed as argument is
+	 * present in any of the HashMap objects stored in loanFormList
+	 * list.
+	 *
+	 * @param id of String type
+	 * @return true if id is present in the any of the Hashmap objects
+	 * 			stored in the list, or false if the id is not present.
+	 */
 	@Override
 	public boolean applicationExist(String id) {
 		for (int i = 0; i < Repository.loanFormList.size(); i++) {
@@ -216,6 +336,16 @@ public class CustomerDAOImpl implements CustomerDAO {
 		return false;
 	}
 	
+	/**
+	 * Checks whether the username value passed as argument is
+	 * present in mainList list to fetch the value stored in
+	 * "email" key in the particular HashMap object.
+	 *
+	 * @param username of String type
+	 * @return String value of the "email" key in HashMap
+	 * 			object present in the list, or null is the username
+	 * 			is not present in any of the objects in the list.
+	 */
 	@Override
 	public String fetchMail(String username) {
 		for (int i = 0; i < Repository.customerList.size(); i++) {
@@ -226,6 +356,16 @@ public class CustomerDAOImpl implements CustomerDAO {
 		return username;
 	}
 	
+	/**
+	 * Checks whether the username value passed as argument is
+	 * present in customerList list to fetch the value stored in
+	 * "firstname" key in the particular HashMap object.
+	 *
+	 * @param username of String type
+	 * @return String value of the "firstname" key in HashMap
+	 * 			object present in the list, or null if the username
+	 * 			is not present in any of the objects in the list.
+	 */
 	@Override
 	public String fetchFirstName(String username) {
 		for (int i = 0; i < Repository.customerList.size(); i++) {
@@ -235,7 +375,17 @@ public class CustomerDAOImpl implements CustomerDAO {
 		}
 		return null;
 	}
-	
+
+	/**
+	 * Checks whether the username value passed as argument is
+	 * present in mainList list to fetch the value stored in
+	 * "lastname" key in the particular HashMap object.
+	 *
+	 * @param username of String type
+	 * @return String value of the "lastname" key in HashMap
+	 * 			object present in the list, or null if the username
+	 * 			is not present in any of the objects in the list.
+	 */
 	@Override
 	public String fetchLastName(String username) {
 		for (int i = 0; i < Repository.customerList.size(); i++) {
@@ -246,6 +396,16 @@ public class CustomerDAOImpl implements CustomerDAO {
 		return null;
 	}
 	
+	/**
+	 * Checks whether the username value passed as argument is
+	 * present in mainList list to fetch the value stored in
+	 * "AccountBal" key in the particular HashMap object.
+	 *
+	 * @param custUsername of String type
+	 * @return Double value of the "AccountBal" key in HashMap
+	 * 			object present in the list, or null if the username
+	 * 			is not present in any of the objects in the list.
+	 */
 	@Override
 	public Double returnBal(String custUsername) {
 		Double loanDouble;
@@ -256,5 +416,13 @@ public class CustomerDAOImpl implements CustomerDAO {
 			}
 		}
 		return null; 
+	}
+	
+	@Override
+	public String autoGenerateId() {
+		Integer autoGenInteger = Repository.applicationIdList.size() + 1;
+		Repository.applicationIdList.add(autoGenInteger);
+		String autoGenIdString = Integer.toString(autoGenInteger);
+		return autoGenIdString;
 	}
 }

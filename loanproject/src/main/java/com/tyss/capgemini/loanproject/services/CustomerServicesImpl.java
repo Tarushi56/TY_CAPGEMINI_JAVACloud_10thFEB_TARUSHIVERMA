@@ -250,7 +250,10 @@ public class CustomerServicesImpl implements CustomerServices {
 	public Double returnBal(String username) {
 		return FactoryClass.getCustomerDao().returnBal(username);
 	}
-
+	@Override
+	public String autoGenerateId() {
+		return FactoryClass.getCustomerDao().autoGenerateId();
+	}
 	
 	
 }
