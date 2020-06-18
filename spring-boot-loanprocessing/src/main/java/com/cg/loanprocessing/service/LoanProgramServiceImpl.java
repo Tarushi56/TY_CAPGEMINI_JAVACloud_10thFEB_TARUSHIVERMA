@@ -48,6 +48,7 @@ public class LoanProgramServiceImpl implements LoanProgramService {
 		}
 	}
 
+	
 	@Override
 	public void deleteProgram(String type) {
 		loanProgramRepo.deleteById(type);
@@ -64,6 +65,11 @@ public class LoanProgramServiceImpl implements LoanProgramService {
 	public Page<LoanProgram> getSortPrograms(int pageNo, int itemsPerPage, String fieldName) {
 		Pageable pageable = PageRequest.of(pageNo, itemsPerPage, Sort.by(fieldName));
 		return loanProgramRepo.findAll(pageable);
+	}
+
+	@Override
+	public LoanProgram updateProgram(LoanProgram loanProgram) {
+		return loanProgramRepo.save(loanProgram);
 	}
 
 }

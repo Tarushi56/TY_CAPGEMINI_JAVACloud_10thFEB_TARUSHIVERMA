@@ -2,8 +2,6 @@ package com.tyss.capgemini.loanproject.util;
 
 import com.tyss.capgemini.loanproject.dao.*;
 import com.tyss.capgemini.loanproject.services.*;
-import com.tyss.capgemini.loanproject.repository.*;
-import com.tyss.capgemini.loanproject.validation.*;
 public class FactoryClass {
     
 	public static CustomerServices getCustomerServices() {

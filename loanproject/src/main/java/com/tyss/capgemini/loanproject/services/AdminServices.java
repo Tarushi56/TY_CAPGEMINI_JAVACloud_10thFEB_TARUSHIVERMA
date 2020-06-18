@@ -1,8 +1,5 @@
 package com.tyss.capgemini.loanproject.services;
 
-import java.util.HashMap;
-import java.util.List;
-
 public interface AdminServices {
 	/**
 	 * 

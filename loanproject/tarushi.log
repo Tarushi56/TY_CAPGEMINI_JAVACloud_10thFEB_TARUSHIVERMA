@@ -3968,3 +3968,441 @@ RequestDate: 23/5/2020
 LoanStatus: approved
 *******************************
 No applications for this plan
+********************* WELCOME ********************
+1> Login as Customer?
+2> Login as Employee?
+3> New user? Register
+4> Exit
+**************************************************
+---------CUSTOMER LOGIN---------
+Enter the Username:-
+Enter the Password:-
+--------WELCOME manoj191---------
+===========================
+   Customer Operations:-
+===========================
+1> Loan Programs:
+2> Apply for loan: 
+3> Pay Loan: 
+4> change password: 
+5> Check Balance: 
+6> View Applications
+7> Logout
+Enter your choice: 
+**********************
+Type: House Loan
+Time Period: 20 years(Max)
+Interest Rates: 9.75 %
+**********************
+**********************
+Type: House Construction Loan
+Time Period: 40 years(Max)
+Interest Rates: 11.0 %
+**********************
+**********************
+Type: Educational Loan
+Time Period: 5 years(Max)
+Interest Rates: 11.5 %
+**********************
+**********************
+Type: Land Purchase Loan
+Time Period: 20 years(Max)
+Interest Rates: 14.2 %
+**********************
+**********************
+Type: Personal Loan
+Time Period: 5 years(Max)
+Interest Rates: 11.14 %
+**********************
+===========================
+   Customer Operations:-
+===========================
+1> Loan Programs:
+2> Apply for loan: 
+3> Pay Loan: 
+4> change password: 
+5> Check Balance: 
+6> View Applications
+7> Logout
+Enter your choice: 
+enter the Bank account number: 
+Enter co-applicant?
+1>Yes        2>No
+enter the Co-Applicant First Name: 
+enter letters only!!!
+enter the Co-Applicant First Name: 
+enter the Co-Applicant's Middle Name: 
+enter the Co-Applicant's Last Name
+enter the Date of Birth: 
+enter correct format only (DD/MM/YYYY)
+enter the Date of Birth: 
+enter the Loan Type
+Available loans :-
+1> House Loan
+2> House Construction Loan
+3> Educational Loan
+4> Land Purchase Loan
+5> Personal Loan
+1> House Loan
+enter the Branch Code
+enter the Branch Name
+Enter the Loan amount
+Enter amount less than balance...
+Enter the Loan amount
+enter the open date
+enter the Request Date
+1>SUBMIT
+2>CANCEL
+Choose one...
+Your loan application form has been submitted successfully.
+*******************************
+ApplicationId: 5
+AccountNo: 12345
+Email: manoj.p@gmail.com
+ApplicantName: Manoj _ Sharma
+DateOfBirth: 20/09/1997
+CoApplicantName: qwer qwert qwerty
+LoanType: House Construction Loan
+BranchCode: 6523
+BranchName: kukas
+OpenDate: 01/05/2005
+RequestDate: 01/04/2005
+LoanStatus: requested
+*******************************
+===========================
+   Customer Operations:-
+===========================
+1> Loan Programs:
+2> Apply for loan: 
+3> Pay Loan: 
+4> change password: 
+5> Check Balance: 
+6> View Applications
+7> Logout
+Enter your choice: 
+===========================
+   Customer Operations:-
+===========================
+1> Loan Programs:
+2> Apply for loan: 
+3> Pay Loan: 
+4> change password: 
+5> Check Balance: 
+6> View Applications
+7> Logout
+Enter your choice: 
+enter the new password: 
+Password not strong enough.
+enter the new password: 
+Password not strong enough.
+enter the new password: 
+Password not strong enough.
+enter the new password: 
+Password not strong enough.
+enter the new password: 
+Password not strong enough.
+enter the new password: 
+Password not strong enough.
+enter the new password: 
+Password has been changed successfully.
+===========================
+   Customer Operations:-
+===========================
+1> Loan Programs:
+2> Apply for loan: 
+3> Pay Loan: 
+4> change password: 
+5> Check Balance: 
+6> View Applications
+7> Logout
+Enter your choice: 
+********************* WELCOME ********************
+1> Login as Customer?
+2> Login as Employee?
+3> New user? Register
+4> Exit
+**************************************************
+---------EMPLOYEE LOGIN---------
+Enter the Username:-
+Enter the Password:-
+--------WELCOME rahul191--------
+===========================
+	  Admin Operations
+===========================
+1> Loan Programs: 
+2> Client Manager 
+3> Loan Reports: 
+4> Logout
+Enter the choice: 
+1> Insert in Loan programs: 
+2> Delete in Loan programs: 
+3> Update in Loan programs: 
+4> View the loan programs: 
+5> Check other operations: 
+enter the choice: 
+enter the Loan Type (name): 
+enter the Time period (year value): 
+enter the Interest Rates : 
+{Type=House Loan, Time-Period=20 years(Max), Interest-Rates=9.75 %}
+{Type=House Construction Loan, Time-Period=40 years(Max), Interest-Rates=11.0 %}
+{Type=Educational Loan, Time-Period=5 years(Max), Interest-Rates=11.5 %}
+{Type=Land Purchase Loan, Time-Period=20 years(Max), Interest-Rates=14.2 %}
+{Type=Personal Loan, Time-Period=5 years(Max), Interest-Rates=11.14 %}
+{Type=plot, Time-Period=4 years(Max), Interest-Rates=7.4 %}
+1> Insert in Loan programs: 
+2> Delete in Loan programs: 
+3> Update in Loan programs: 
+4> View the loan programs: 
+5> Check other operations: 
+enter the choice: 
+Plans offered:-
+1> House Loan
+2> House Construction Loan
+3> Educational Loan
+4> Land Purchase Loan
+5> Personal Loan
+6> plot
+enter the loan type you want to delete: 
+Loan Deleted
+1> Insert in Loan programs: 
+2> Delete in Loan programs: 
+3> Update in Loan programs: 
+4> View the loan programs: 
+5> Check other operations: 
+enter the choice: 
+enter the loan type: 
+1> House Loan
+2> House Construction Loan
+3> Educational Loan
+4> Land Purchase Loan
+5> Personal Loan
+choose:-
+House Loan
+what detail you want to update?
+1> Type 
+2> Time-Period
+3> Interest-Rates
+4> Exit
+enter choice:-
+for type:House Loan
+enter the Time-Period:-
+updated successfuly
+what detail you want to update?
+1> Type 
+2> Time-Period
+3> Interest-Rates
+4> Exit
+enter choice:-
+1> Insert in Loan programs: 
+2> Delete in Loan programs: 
+3> Update in Loan programs: 
+4> View the loan programs: 
+5> Check other operations: 
+enter the choice: 
+**********************
+Type: House Loan
+Time Period: 5 years(Max)
+Interest Rates: 9.75 %
+**********************
+**********************
+Type: House Construction Loan
+Time Period: 40 years(Max)
+Interest Rates: 11.0 %
+**********************
+**********************
+Type: Educational Loan
+Time Period: 5 years(Max)
+Interest Rates: 11.5 %
+**********************
+**********************
+Type: Land Purchase Loan
+Time Period: 20 years(Max)
+Interest Rates: 14.2 %
+**********************
+**********************
+Type: Personal Loan
+Time Period: 5 years(Max)
+Interest Rates: 11.14 %
+**********************
+1> Insert in Loan programs: 
+2> Delete in Loan programs: 
+3> Update in Loan programs: 
+4> View the loan programs: 
+5> Check other operations: 
+enter the choice: 
+===========================
+	  Admin Operations
+===========================
+1> Loan Programs: 
+2> Client Manager 
+3> Loan Reports: 
+4> Logout
+Enter the choice: 
+1> Add Clients: 
+2> View Clients: 
+3> Check other operations: 
+Choose one:-
+***********************************
+Username: saswat191
+Password: Qwerty@123
+Email: Saswat.p@gmail.com
+FirstName: Saswat
+LastName: Biswas
+Phone Number:7613424567
+Role:L.A.D
+***********************************
+***********************************
+Username: shrawani191
+Password: Qwerty@123
+Email: shrawani.p@gmail.com
+FirstName: Shrawani
+LastName: Rowdy
+Phone Number:7613423445
+Role:L.A.D
+***********************************
+***********************************
+Username: divya191
+Password: Qwerty@123
+Email: divya.p@gmail.com
+FirstName: Divya
+LastName: Somaraju
+Phone Number:7613423490
+Role:L.A.D
+***********************************
+1> Add Clients: 
+2> View Clients: 
+3> Check other operations: 
+Choose one:-
+===========================
+	  Admin Operations
+===========================
+1> Loan Programs: 
+2> Client Manager 
+3> Loan Reports: 
+4> Logout
+Enter the choice: 
+Which report do you want to check: 
+1> Approved reports: 
+2> Rejected reports: 
+3> Requested reports: 
+4> Check other operations: 
+Approved application report:-
+*******************************
+ApplicationId: 1
+AccountNo: BNI12345
+Email: manoj.p@gmail.com
+ApplicantName: Manoj Sharma 
+DateOfBirth: 14/3/1973
+CoApplicantName: Meghna Singh 
+LoanType: Personal Loan
+BranchCode: BNI22343456
+BranchName: Cannaught Circle
+OpenDate: 09/12/1992
+RequestDate: 23/5/2020
+LoanStatus: approved
+*******************************
+*******************************
+ApplicationId: 4
+AccountNo: BNI12345
+Email: shreya.p@gmail.com
+ApplicantName: Shreya Singh 
+DateOfBirth: 14/3/1973
+CoApplicantName: Meghna Singh 
+LoanType: Personal Loan
+BranchCode: BNI22343456
+BranchName: Cannaught Circle
+OpenDate: 09/12/1992
+RequestDate: 23/5/2020
+LoanStatus: approved
+*******************************
+Which report do you want to check: 
+1> Approved reports: 
+2> Rejected reports: 
+3> Requested reports: 
+4> Check other operations: 
+Rejected application report:-
+*******************************
+ApplicationId: 2
+AccountNo: BNI22345
+Email: senku.p@gmail.com
+ApplicantName: Senku Manohar 
+DateOfBirth: 14/3/1973
+CoApplicantName: Shiv Kumar Rajput
+LoanType: House Construction Loan
+BranchCode: BNI33343456
+BranchName: Cannaught Bank
+OpenDate: 12-11-2011
+RequestDate: 02-4-2020
+LoanStatus: rejected
+*******************************
+Which report do you want to check: 
+1> Approved reports: 
+2> Rejected reports: 
+3> Requested reports: 
+4> Check other operations: 
+Invalid Option
+Which report do you want to check: 
+1> Approved reports: 
+2> Rejected reports: 
+3> Requested reports: 
+4> Check other operations: 
+Requested application report:-
+*******************************
+ApplicationId: 3
+AccountNo: BNI21145
+Email: tarushi.p@gmail.com
+ApplicantName: Tarushi Verma 
+DateOfBirth: 14/3/1973
+CoApplicantName: Anjali Kumari 
+LoanType: Educational Loan
+BranchCode: BNI13311456
+BranchName: Purani Delhi
+OpenDate: 03-08-1920
+RequestDate: 01-4-2020
+LoanStatus: requested
+*******************************
+*******************************
+ApplicationId: 5
+AccountNo: 12345
+Email: manoj.p@gmail.com
+ApplicantName: Manoj _ Sharma
+DateOfBirth: 20/09/1997
+CoApplicantName: qwer qwert qwerty
+LoanType: House Construction Loan
+BranchCode: 6523
+BranchName: kukas
+OpenDate: 01/05/2005
+RequestDate: 01/04/2005
+LoanStatus: requested
+*******************************
+Which report do you want to check: 
+1> Approved reports: 
+2> Rejected reports: 
+3> Requested reports: 
+4> Check other operations: 
+===========================
+	  Admin Operations
+===========================
+1> Loan Programs: 
+2> Client Manager 
+3> Loan Reports: 
+4> Logout
+Enter the choice: 
+********************* WELCOME ********************
+1> Login as Customer?
+2> Login as Employee?
+3> New user? Register
+4> Exit
+**************************************************
+********************* WELCOME ********************
+1> Login as Customer?
+2> Login as Employee?
+3> New user? Register
+4> Exit
+**************************************************
+---------EMPLOYEE LOGIN---------
+Enter the Username:-
+enter valid username (letters and numbers, max-15)
+Enter the Username:-
+enter valid username (letters and numbers, max-15)
+Enter the Username:-

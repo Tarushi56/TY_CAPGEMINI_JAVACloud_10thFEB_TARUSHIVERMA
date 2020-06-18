@@ -3,7 +3,6 @@ package com.tyss.capgemini.loanproject.dao;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-import static com.tyss.capgemini.loanproject.repository.Repository.*;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 

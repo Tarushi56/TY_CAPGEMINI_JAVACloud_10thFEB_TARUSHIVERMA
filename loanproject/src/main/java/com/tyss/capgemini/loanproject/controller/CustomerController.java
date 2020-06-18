@@ -1,18 +1,15 @@
 package com.tyss.capgemini.loanproject.controller;
 
-import java.util.Scanner;
-
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import com.tyss.capgemini.loanproject.exception.DataAlreadyExistsException;
-import com.tyss.capgemini.loanproject.exception.DateFormatMismatchException;
+
 import com.tyss.capgemini.loanproject.exception.DateLimitException;
 import com.tyss.capgemini.loanproject.exception.InvalidDataException;
 import com.tyss.capgemini.loanproject.util.FactoryClass;
 import com.tyss.capgemini.loanproject.validation.Validation;
 
-import static com.tyss.capgemini.loanproject.repository.Repository.*;
+
 
 public class CustomerController  {
 	public static void custController(String custUsername) { 

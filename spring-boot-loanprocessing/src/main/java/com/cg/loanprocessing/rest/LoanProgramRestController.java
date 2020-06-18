@@ -24,7 +24,7 @@ import com.cg.loanprocessing.service.LoanProgramService;
 @RequestMapping("/api")
 @RestController
 public class LoanProgramRestController {
-@Autowired
+	@Autowired
 	private LoanProgramService loanProgramService;
 
 	@Autowired
@@ -59,8 +59,9 @@ public class LoanProgramRestController {
 
 	@PutMapping("/loan")
 	public Response<LoanProgram> updateLoanProgram(@RequestBody LoanProgram program) {
-	//	program.setLoanId(0);
-		LoanProgram loanProgram1 = loanProgramService.saveProgram(program);
+		// program.setLoanId(0);
+
+		LoanProgram loanProgram1 = loanProgramService.updateProgram(program);
 		if (loanProgram1 != null) {
 			return new Response<LoanProgram>(false, "program updated successfully", loanProgram1);
 		} else {
@@ -74,10 +75,10 @@ public class LoanProgramRestController {
 		if (program != null) {
 			loanProgramService.deleteProgram(type);
 			return new Response<LoanProgram>(false, "program deleted", program);
-		}else {
+		} else {
 			throw new LoanProgramNotFoundException(" program not found");
 		}
-		
+
 	}
 
 	// pagination

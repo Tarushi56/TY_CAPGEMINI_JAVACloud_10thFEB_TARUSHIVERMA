@@ -1,9 +1,5 @@
 package com.tyss.capgemini.loanproject.services;
 
-import java.util.HashMap;
-import java.util.List;
-
-import static  com.tyss.capgemini.loanproject.util.FactoryClass.*;
 import com.tyss.capgemini.loanproject.exception.*;
 import com.tyss.capgemini.loanproject.repository.Repository;
 import com.tyss.capgemini.loanproject.util.FactoryClass;

@@ -1,8 +1,5 @@
 package com.tyss.capgemini.loanproject.dao;
 
-import java.util.HashMap;
-import java.util.List;
-
 public interface CustomerDAO {
 	public boolean viewLoanPrograms();
 	public boolean changePassword(String custUsername, String newPass);

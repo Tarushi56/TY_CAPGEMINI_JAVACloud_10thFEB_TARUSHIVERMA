@@ -1,13 +1,8 @@
 package com.tyss.capgemini.loanproject.services;
 
-import java.util.HashMap;
-import java.util.List;
-
 import com.tyss.capgemini.loanproject.exception.FormReviewChoiceException;
 import com.tyss.capgemini.loanproject.util.FactoryClass;
 import com.tyss.capgemini.loanproject.validation.Validation;
-
-import static com.tyss.capgemini.loanproject.util.FactoryClass.*;
 
 public class LadServicesImpl implements LadServices {
 Validation validationClass = new Validation();

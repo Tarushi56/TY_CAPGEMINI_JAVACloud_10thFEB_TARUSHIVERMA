@@ -110,6 +110,7 @@ public class Repository {
 		// Customer.
 		CustomerBean bean6 = new CustomerBean("manoj191", "cus01", "manoj.p@gmail.com", "Qwerty@123", "Manoj", "Sharma",
 				7613412385L, "customer", 90987.12, 60890);
+		
 		HashMap<String, Object> user6 = new LinkedHashMap<String, Object>();
 		user6.put("userid", bean6.getUserid());
 		user6.put("password", bean6.getPassword());

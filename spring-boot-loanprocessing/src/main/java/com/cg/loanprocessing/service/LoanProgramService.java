@@ -14,6 +14,8 @@ public interface LoanProgramService {
 	public LoanProgram saveProgram(LoanProgram loanProgram);
 
 	public void deleteProgram(String type);
+	
+	public LoanProgram updateProgram(LoanProgram loanProgram);
 
 	public Page<LoanProgram> getPrograms(int pageNo, int itemsPerPage);
 

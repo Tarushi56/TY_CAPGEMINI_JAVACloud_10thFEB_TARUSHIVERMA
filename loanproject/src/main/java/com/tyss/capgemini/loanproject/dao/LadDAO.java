@@ -1,8 +1,5 @@
 package com.tyss.capgemini.loanproject.dao;
 
-import java.util.HashMap;
-import java.util.List;
-
 public interface LadDAO {
 	public boolean viewLoanPrograms();
 

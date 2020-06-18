@@ -56,7 +56,7 @@ public class Login {
 					logger.info("Enter the Password:-");
 					custPass = scanner.nextLine();
 					try {
-						if (validationClass.passValid(custPass) == false) {
+						if (validationClass.passValid(custPass) ) {
 							throw new PasswordFormatMismatchException("enter valid Password (Should contain 1Uppercase, 1Lowercase, 1Special Char, 1Number, Range-(6-20))");
 						} else {
 							count = true;
